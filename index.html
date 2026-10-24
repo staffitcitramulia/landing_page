@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klinik Utama Citra Mulia Blora — Semoga Sehat Selalu</title>
+<meta name="description" content="Klinik Utama Citra Mulia Blora: jadwal dokter spesialis, paket MCU, persalinan, klinik vaksinasi, rawat inap, homecare, dan antar jemput pasien. Melayani pasien Umum & BPJS Kesehatan.">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ungu:#a316b8; --ungu-tua:#7a0f8c; --ungu-muda:#f6e6fa; --pink:#e83fbf;
+  --biru:#6f9cf5; --biru-tua:#3a64d8; --biru-muda:#eaf1ff;
+  --teks:#2a2140; --teks-2:#5d5672; --garis:#e7e1ef; --bg:#fdfbff; --kartu:#fff;
+  --radius:18px; --bayang:0 10px 30px -12px rgba(122,15,140,.25);
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;font-family:"Plus Jakarta Sans",system-ui,sans-serif;color:var(--teks);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+@media (max-width:520px){.wrap{padding:0 16px}section{padding:56px 0}.sec-head{margin-bottom:24px}.chip{padding:7px 12px}.homecare{padding:24px 20px}.panel{padding:20px}.homecare{border-radius:20px}}
+h1,h2,h3{line-height:1.15;margin:0}
+h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.02em}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--biru-tua);background:var(--biru-muda);padding:6px 12px;border-radius:99px;margin-bottom:14px}
+.lead{color:var(--teks-2);max-width:640px;margin:12px 0 0}
+section{padding:80px 0}
+.sec-head{margin-bottom:36px}
+.alt{background:linear-gradient(180deg,#fff, var(--ungu-muda))}
+
+/* tombol */
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;border-radius:99px;padding:13px 22px;transition:transform .15s, box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-wa{background:#22b45a;color:#fff;box-shadow:0 8px 20px -8px rgba(34,180,90,.6)}
+.btn-ghost{background:#fff;color:var(--ungu);border:2px solid var(--ungu)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--garis)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-mark{height:40px;width:auto;flex:none}
+.brand small{display:block;font-size:.66rem;letter-spacing:.16em;font-weight:700;color:var(--teks-2)}
+.brand b{display:block;font-size:1.12rem;color:#d31f3a;font-weight:800;line-height:1}
+.menu{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.menu a{display:block;white-space:nowrap;padding:8px 10px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.92rem;color:var(--teks-2)}
+.menu a:hover{background:var(--ungu-muda);color:var(--ungu)}
+.nav .btn{padding:10px 18px;font-size:.9rem}
+.burger{display:none;background:none;border:0;padding:8px;cursor:pointer;color:var(--teks)}
+@media (max-width:1180px){
+  .menu{display:none;position:absolute;top:70px;left:0;right:0;flex-direction:column;background:#fff;padding:12px 20px 20px;border-bottom:1px solid var(--garis);box-shadow:var(--bayang)}
+  .menu.open{display:flex}
+  .burger{display:block}
+  .nav .btn-wa span{display:none}
+  .nav .btn{padding:10px}
+}
+
+/* hero */
+.hero{padding:12px 0 48px;background:radial-gradient(900px 400px at 85% 0%, #f3d4fb 0%, transparent 60%),radial-gradient(700px 400px at 0% 30%, #dfe9ff 0%, transparent 60%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.hero-grid>*{min-width:0}
+.hero h1{font-size:clamp(2.2rem,5.4vw,3rem);font-weight:800;letter-spacing:-.03em}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--ungu),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:1.1rem;color:var(--teks-2);margin:18px 0 28px;max-width:540px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.badge{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--garis);padding:8px 14px;border-radius:12px;font-size:.85rem;font-weight:600}
+.badge .stars{color:#f5b301;letter-spacing:1px}
+.badge .bpjs{color:#1c8b3e;font-weight:800}
+.hero-card{background:#fff;border-radius:24px;box-shadow:var(--bayang);padding:26px;border:1px solid var(--garis)}
+.hero-card h3{font-size:1rem;color:var(--ungu);margin-bottom:14px}
+.quick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.quick a{display:flex;flex-direction:column;gap:4px;padding:14px;border-radius:14px;background:var(--bg);border:1px solid var(--garis);text-decoration:none;font-weight:700;font-size:.92rem;transition:border-color .15s,background .15s}
+.quick a span{font-weight:500;font-size:.8rem;color:var(--teks-2)}
+.quick a:hover{border-color:var(--ungu);background:var(--ungu-muda)}
+.gedung{margin-top:56px;height:200px;background:url(assets/gedung.jpg) center/cover;border-radius:24px 24px 0 0;position:relative}
+.gedung::after{content:"Kami Peduli Anda";position:absolute;right:20px;bottom:16px;background:#fff;color:var(--ungu);font-weight:800;padding:8px 16px;border-radius:99px;font-size:.95rem}
+@media (min-width:1181px){.hero{padding-right:64px}}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr;gap:8px}.hero-card{max-width:560px;width:100%;margin:0 auto}}
+@media (max-width:400px){.hero-card{padding:18px}.quick a{padding:12px}}
+
+/* jadwal dokter */
+.filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.chip{border:1px solid var(--garis);background:#fff;padding:8px 14px;border-radius:99px;font:inherit;font-size:.85rem;font-weight:600;cursor:pointer;color:var(--teks-2)}
+.chip[aria-pressed="true"]{background:var(--ungu);border-color:var(--ungu);color:#fff}
+.dokter-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:18px}
+.dokter{background:var(--kartu);border:1px solid var(--garis);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:14px;transition:box-shadow .2s,transform .2s}
+.dokter:hover{box-shadow:var(--bayang);transform:translateY(-3px)}
+.dokter-top{display:flex;gap:14px;align-items:center}
+.avatar{width:72px;height:72px;border-radius:50%;flex:none;object-fit:cover;background:var(--ungu-muda);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--ungu-muda)}
+.dokter h3{font-size:1.05rem}
+.dokter .sp{font-size:.84rem;color:var(--ungu);font-weight:600}
+.jadwal{list-style:none;margin:0;padding:12px 14px;background:var(--biru-muda);border-radius:12px;font-size:.88rem;display:grid;gap:4px}
+.jadwal li{display:flex;justify-content:space-between;gap:12px}
+.jadwal li b{font-weight:600;color:var(--teks)}
+.jadwal li span{font-variant-numeric:tabular-nums;color:var(--biru-tua);font-weight:700;white-space:nowrap}
+
+/* poliklinik */
+.poli-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:22px}
+.poli{background:#fff;border:1px solid var(--garis);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:190px 1fr}
+.poli .foto{background:linear-gradient(180deg,var(--biru-muda),var(--ungu-muda));display:flex;align-items:flex-end;justify-content:center}
+.poli .foto img{width:100%;height:100%;object-fit:cover;object-position:top}
+.poli .isi{padding:22px}
+.poli .tag{font-size:.75rem;font-weight:700;color:#1c8b3e;background:#e7f7ec;padding:4px 10px;border-radius:99px;display:inline-block;margin-bottom:8px}
+.poli h3{font-size:1.25rem}
+.poli .dr{font-size:.86rem;color:var(--ungu);font-weight:600;margin:4px 0 10px}
+.poli ul{margin:0;padding-left:18px;font-size:.9rem;color:var(--teks-2)}
+.poli .ikon-only{display:grid;place-items:center;color:var(--ungu)}
+.poli .ikon-only svg{width:64px;height:64px}
+.note{margin-top:12px;font-size:.85rem;background:var(--ungu-muda);border-radius:12px;padding:10px 12px;color:var(--ungu-tua)}
+@media (max-width:520px){.poli{grid-template-columns:1fr}.poli .foto{height:260px}.poli .foto.ikon-only{display:none}}
+
+/* paket mcu */
+.mcu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px}
+.mcu{background:#fff;border:1px solid var(--garis);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;position:relative}
+.mcu.pop{border:2px solid var(--ungu);box-shadow:var(--bayang)}
+.mcu.pop::before{content:"Terlengkap";position:absolute;top:-12px;left:24px;background:var(--ungu);color:#fff;font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:99px}
+.mcu h3{font-size:1.1rem}
+.harga{font-size:1.75rem;font-weight:800;color:var(--ungu);margin:8px 0 14px;letter-spacing:-.02em}
+.harga small{font-size:.8rem;font-weight:600;color:var(--teks-2)}
+.mcu ul{list-style:none;padding:0;margin:0;display:grid;gap:6px;font-size:.88rem;color:var(--teks-2)}
+.mcu li{display:flex;gap:8px}
+.mcu li::before{content:"";flex:none;width:16px;height:16px;margin-top:3px;border-radius:50%;background:var(--ungu-muda) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%23a316b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
+
+/* tabel */
+.tbl-wrap{background:#fff;border:1px solid var(--garis);border-radius:var(--radius);overflow:auto}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--garis)}
+th{background:var(--ungu);color:#fff;font-weight:700;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:var(--bg)}
+td.rp{font-weight:700;color:var(--ungu-tua);white-space:nowrap;font-variant-numeric:tabular-nums;text-align:right}
+th.rp{text-align:right}
+
+/* kartu kelas */
+.kelas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px}
+.kelas{background:#fff;border:1px solid var(--garis);border-radius:var(--radius);padding:22px}
+.kelas h3{font-size:1.05rem;display:flex;justify-content:space-between;align-items:center}
+.kelas .pill{background:var(--ungu-muda);color:var(--ungu);font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:99px}
+.kelas dl{margin:14px 0;display:grid;gap:8px}
+.kelas dl div{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;background:var(--bg);border-radius:10px;font-size:.88rem}
+.kelas dt{color:var(--teks-2)}
+.kelas dd{margin:0;font-weight:800;color:var(--ungu-tua);font-variant-numeric:tabular-nums;white-space:nowrap}
+.fasilitas{display:flex;flex-wrap:wrap;gap:6px}
+.fasilitas span{font-size:.78rem;border:1px solid var(--garis);padding:4px 10px;border-radius:99px;color:var(--teks-2)}
+
+/* ibu & anak */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.split>*,.vaksin-promo>*,.poli-grid>*,.kontak>*{min-width:0}
+@media (max-width:860px){.split{grid-template-columns:1fr}}
+.panel{background:#fff;border:1px solid var(--garis);border-radius:24px;padding:28px}
+.panel h3{font-size:1.25rem;margin-bottom:6px}
+.panel .sub{color:var(--teks-2);font-size:.92rem;margin:0 0 16px}
+.panel ul.cek{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:.92rem}
+.panel ul.cek li{padding-left:26px;position:relative}
+.panel ul.cek li::before{content:"✓";position:absolute;left:0;top:0;width:18px;height:18px;border-radius:50%;background:var(--ungu);color:#fff;font-size:.7rem;display:grid;place-items:center;font-weight:800}
+.price-tag{display:inline-flex;flex-direction:column;background:linear-gradient(135deg,var(--ungu),var(--pink));color:#fff;border-radius:16px;padding:12px 18px;margin-top:18px}
+.price-tag small{font-size:.75rem;opacity:.9;font-weight:600}
+.price-tag b{font-size:1.5rem;letter-spacing:-.02em}
+
+/* vaksin */
+.vaksin-tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:16px}
+.search{flex:1;min-width:220px;max-width:380px;position:relative}
+.search input{width:100%;font:inherit;padding:12px 16px 12px 42px;border-radius:99px;border:1px solid var(--garis);background:#fff}
+.search input:focus{outline:2px solid var(--ungu);outline-offset:1px}
+.search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--teks-2)}
+td.grp{font-weight:700;color:var(--ungu)}
+.vaksin-promo{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px;margin-top:28px}
+.empty{padding:24px;text-align:center;color:var(--teks-2);display:none}
+
+/* homecare */
+.homecare{background:linear-gradient(135deg,var(--biru-tua),var(--ungu));color:#fff;border-radius:28px;padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.homecare h2{color:#fff}
+.homecare p{opacity:.92}
+.hc-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hc-list span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:12px 14px;border-radius:12px;font-weight:600;font-size:.9rem}
+.hc-list span.full{grid-column:1/-1}
+@media (max-width:860px){.homecare{grid-template-columns:1fr;padding:28px}}
+@media (max-width:420px){.hc-list{grid-template-columns:1fr}}
+
+/* carousel brosur — model tumpuk (coverflow) di kolom kiri hero: 1 kartu depan, kiri/kanan di belakang */
+.brosur{margin:20px 0 26px;position:relative}
+.brosur-btn{position:absolute;top:50%;z-index:4;transform:translateY(-50%);box-shadow:0 6px 16px -6px rgba(60,10,80,.35);width:40px;height:40px;border-radius:50%;border:1px solid var(--garis);background:#fff;color:var(--ungu);font-size:1.5rem;line-height:1;cursor:pointer;display:grid;place-items:center;transition:background .15s,color .15s}
+.brosur-btn:hover{background:var(--ungu);color:#fff;border-color:var(--ungu)}
+.brosur-btn.prev{left:0}.brosur-btn.next{right:0}
+.brosur-stage{--w:clamp(180px,19vw,240px);position:relative;height:calc(var(--w) * 16 / 9 + 30px);touch-action:pan-y;user-select:none}
+.brosur-stage:focus-visible{outline:2px solid var(--ungu);outline-offset:4px;border-radius:20px}
+.brosur-item{position:absolute;top:12px;left:50%;width:var(--w);aspect-ratio:9/16;margin-left:calc(var(--w) / -2);padding:0;border:0;border-radius:22px;overflow:hidden;cursor:pointer;
+  background:linear-gradient(180deg,#fff,var(--ungu-muda));box-shadow:0 30px 50px -20px rgba(60,10,80,.45);
+  transition:transform .55s cubic-bezier(.22,.8,.3,1),opacity .55s,filter .55s;opacity:0;pointer-events:none;transform:scale(.6)}
+.brosur-item img{width:100%;height:100%;object-fit:contain;pointer-events:none;-webkit-user-drag:none}
+.brosur-item[data-pos="0"]{transform:none;opacity:1;z-index:3;pointer-events:auto;cursor:zoom-in}
+.brosur-item[data-pos="-1"],.brosur-item[data-pos="1"]{opacity:1;z-index:2;pointer-events:auto;filter:brightness(.82) saturate(.9)}
+.brosur-item[data-pos="-1"]{transform:translateX(-58%) scale(.82)}
+.brosur-item[data-pos="1"]{transform:translateX(58%) scale(.82)}
+.brosur-item[data-pos="-2"],.brosur-item[data-pos="2"]{z-index:1}
+.brosur-item[data-pos="-2"]{transform:translateX(-100%) scale(.66)}
+.brosur-item[data-pos="2"]{transform:translateX(100%) scale(.66)}
+.brosur-item[data-pos="-1"]:hover,.brosur-item[data-pos="1"]:hover{filter:none}
+@media (max-width:860px) and (min-width:521px){.brosur-stage{--w:min(36vw,260px)}}
+@media (max-width:520px){.brosur-stage{--w:58vw}.brosur-item[data-pos="-1"]{transform:translateX(-42%) scale(.78)}.brosur-item[data-pos="1"]{transform:translateX(42%) scale(.78)}}
+@media (prefers-reduced-motion:reduce){.brosur-item{transition:none}}
+dialog{border:0;padding:0;background:transparent;max-width:min(92vw,560px);max-height:92vh}
+dialog::backdrop{background:rgba(20,10,30,.8)}
+dialog img{max-height:88vh;width:auto;margin:auto;border-radius:12px}
+dialog .tutup{position:fixed;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;font-size:1.4rem;cursor:pointer}
+dialog .geser{position:fixed;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:#fff;font-size:1.3rem;cursor:pointer}
+dialog .prev{left:16px} dialog .next{right:16px}
+
+/* kontak */
+.kontak{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
+@media (max-width:860px){.kontak{grid-template-columns:1fr}}
+.kontak-list{display:grid;gap:12px}
+.kontak-list a,.kontak-list div{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--garis);border-radius:16px;padding:16px 18px;text-decoration:none}
+.kontak-list .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;flex:none;background:var(--ungu-muda);color:var(--ungu)}
+.kontak-list .ic svg{width:22px;height:22px}
+.kontak-list small{display:block;color:var(--teks-2);font-size:.8rem}
+.kontak-list b{font-weight:700}
+.map{border-radius:20px;overflow:hidden;border:1px solid var(--garis);min-height:320px}
+.map iframe{width:100%;height:100%;min-height:320px;border:0}
+
+footer{background:var(--ungu-tua);color:#f3dcf8;padding:36px 0;font-size:.88rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
+footer b{color:#fff}
+
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#22b45a;color:#fff;display:grid;place-items:center;box-shadow:0 10px 24px -6px rgba(34,180,90,.7)}
+.wa-float svg{width:30px;height:30px}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5.1 5.2-1.4A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3a8.2 8.2 0 1 1 7 3.9Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3Z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Z"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-tt" viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 3c.4 2.3 1.9 3.8 4.2 4v3.1a7.4 7.4 0 0 1-4.1-1.3v6.4A6 6 0 1 1 10.6 9v3.2a2.8 2.8 0 1 0 2.9 2.8V3h3.1Z"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M14 8V6.3c0-.8.2-1.3 1.4-1.3H17V2h-2.6C11.3 2 10.4 3.6 10.4 6.2V8H8v3h2.4v11H14V11h2.6l.4-3H14Z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 21s-7-6.2-7-11.5a7 7 0 1 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#beranda" aria-label="Klinik Utama Citra Mulia">
+      <img class="brand-mark" src="assets/logo.png" alt="" width="47" height="40">
+      <span><small>KLINIK UTAMA</small><b>Citra Mulia</b></span>
+    </a>
+    <ul class="menu" id="menu">
+      <li><a href="#dokter">Jadwal Dokter</a></li>
+      <li><a href="#poliklinik">Poliklinik</a></li>
+      <li><a href="#mcu">Paket MCU</a></li>
+      <li><a href="#ibu-anak">Ibu &amp; Anak</a></li>
+      <li><a href="#rawat-inap">Rawat Inap</a></li>
+      <li><a href="#vaksinasi">Vaksinasi</a></li>
+      <li><a href="#layanan-rumah">Homecare</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+    <div style="display:flex;gap:6px;align-items:center">
+      <a class="btn btn-wa" href="https://wa.me/6281333211118" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span>Daftar via WA</span></a>
+      <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="menu">
+        <svg width="26" height="26" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="beranda">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1>Salam Hangat, <em>Semoga Sehat Selalu.</em></h1>
+        <div class="brosur" id="brosur" aria-roledescription="carousel" aria-label="Brosur layanan">
+          <div class="brosur-stage" id="brosur-stage" tabindex="0" aria-label="Gunakan panah kiri/kanan untuk berpindah brosur"></div>
+          <button class="brosur-btn prev" id="brosur-prev" aria-label="Brosur sebelumnya">‹</button>
+          <button class="brosur-btn next" id="brosur-next" aria-label="Brosur berikutnya">›</button>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Cari layanan</h3>
+        <div class="quick">
+          <a href="#dokter">Jadwal Dokter<span>10 dokter spesialis</span></a>
+          <a href="#mcu">Paket MCU<span>Mulai Rp328.000</span></a>
+          <a href="#vaksinasi">Klinik Vaksinasi<span>30+ jenis vaksin</span></a>
+          <a href="#ibu-anak">Persalinan<span>Normal &amp; SC (ERACS)</span></a>
+          <a href="#rawat-inap">Rawat Inap<span>Kelas VIP – 3</span></a>
+          <a href="#layanan-rumah">Homecare &amp; Antar Jemput<span>Kami yang datang</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JADWAL DOKTER -->
+<section id="dokter">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Jadwal Praktek</span>
+      <h2>Jadwal Praktek Dokter Spesialis</h2>
+      <p class="lead">Semua jadwal dalam WIB. Daftar lebih dulu melalui WhatsApp agar antrean Anda tercatat.</p>
+    </div>
+    <div class="filter" role="group" aria-label="Filter hari praktek">
+      <button class="chip" aria-pressed="true" data-hari="semua">Semua hari</button>
+      <button class="chip" aria-pressed="false" data-hari="senin">Senin</button>
+      <button class="chip" aria-pressed="false" data-hari="selasa">Selasa</button>
+      <button class="chip" aria-pressed="false" data-hari="rabu">Rabu</button>
+      <button class="chip" aria-pressed="false" data-hari="kamis">Kamis</button>
+      <button class="chip" aria-pressed="false" data-hari="jumat">Jum'at</button>
+      <button class="chip" aria-pressed="false" data-hari="sabtu">Sabtu</button>
+    </div>
+    <div class="dokter-grid" id="dokter-grid">
+      <article class="dokter" data-hari="senin selasa rabu kamis jumat">
+        <div class="dokter-top"><img class="avatar" src="assets/dokter/dr-tina.png" alt="" width="72" height="72" loading="lazy"><div><h3>dr. Tina, Sp.PD</h3><div class="sp">Spesialis Penyakit Dalam</div></div></div>
+        <ul class="jadwal"><li><b>Senin – Jum'at</b><span>15.00 – 18.00</span></li></ul>
+      </article>
+      <article class="dokter" data-hari="senin selasa rabu kamis jumat">
+        <div class="dokter-top"><img class="avatar" src="assets/dokter/dr-agung.png" alt="" width="72" height="72" loading="lazy"><div><h3>dr. Agung, Sp.B</h3><div class="sp">Spesialis Bedah</div></div></div>
+        <ul class="jadwal"><li><b>Senin – Jum'at</b><span>16.00 – 18.00</span></li></ul>
+      </article>
+      <article class="dokter" data-hari="senin selasa rabu kamis jumat sabtu">
+        <div class="dokter-top"><img class="avatar" src="assets/dokter/dr-mifa.png" alt="" width="72" height="72" loading="lazy"><div><h3>dr. Mifa, Sp.PD</h3><div class="sp">Spesialis Penyakit Dalam</div></div></div>
+        <ul class="jadwal"><li><b>Senin – Jum'at</b><span>06.30 – 08.45</span></li><li><b>Sabtu</b><span>14.00 – 17.00</span></li></ul>
+      </article>
+      <article class="dokter" data-hari="senin rabu kamis jumat sabtu">
+        <div class="dokter-top"><img class="avatar" src="assets/dokter/dr-guntur.png" alt="" width="72" height="72" loading="lazy"><div><h3>dr. Guntur W, Sp.KFR</h3><div class="sp">Spesialis Rehabilitasi Medik</div></div></div>
+        <ul class="jadwal"><li><b>Senin, Kamis &amp; Sabtu</b><span>13.00 – 15.00</span></li><li><b>Rabu &amp; Jum'at</b><span>15.00 – 17.00</span></li></ul>
+      </article>
+      <article class="dokter" data-hari="senin selasa rabu kamis jumat">
+        <div class="dokter-top"><img class="avatar" src="assets/dokter/dr-befrie.png" alt="" width="72" height="72" loading="lazy"><div><h3>dr. Befrie M, Sp.N, FINA</h3><div class="sp">Spesialis Saraf</div></div></div>
+        <ul class="jadwal"><li><b>Senin</b><span>14.00 – 17.00</span></li><li><b>Selasa</b><span>14.00 – 18.00</span></li><li><b>Rabu</b><span>14.00 – 17.00</span></li><li><b>Kamis</b><span>14.00 – 17.00</span></li><li><b>Jum'at</b><span>14.00 – 17.00</span></li></ul>
+      </article>
+      <article class="dokter" data-hari="senin selasa rabu kamis jumat sabtu">
+        <div class="dokter-top"><img class="avatar" src="assets/dokter/dr-ivan.png" alt="" width="72" height="72" loading="lazy"><div><h3>dr. Ivan, Sp.A</h3><div class="sp">Spesialis Anak</div></div></div>
+        <ul class="jadwal"><li><b>Senin – Sabtu</b><span>06.00 – 08.00</span></li></ul>
+      </article>
+      <article class="dokter" data-hari="senin selasa rabu kamis">
+        <div class="dokter-top"><img class="avatar" src="assets/dokter/dr-samuel.png" alt="" width="72" height="72" loading="lazy"><div><h3>dr. Samuel, Sp.T.H.T.B.K.L</h3><div class="sp">Spesialis THT</div></div></div>
+        <ul class="jadwal"><li><b>Senin – Kamis</b><span>17.00 – 19.00</span></li></ul>
+      </article>
+      <article class="dokter" data-hari="senin selasa rabu kamis jumat">
+        <div class="dokter-top"><img class="avatar" src="assets/dokter/dr-sherly.png" alt="" width="72" height="72" loading="lazy"><div><h3>dr. Sherlyana, Sp.OG</h3><div class="sp">Spesialis Kandungan</div></div></div>
+        <ul class="jadwal"><li><b>Senin</b><span>13.00 – 15.00</span></li><li><b>Selasa, Kamis, Jum'at</b><span>16.00 – 18.00</span></li><li><b>Rabu</b><span>09.00 – 11.00</span></li></ul>
+      </article>
+      <article class="dokter" data-hari="senin selasa rabu kamis">
+        <div class="dokter-top"><img class="avatar" src="assets/dokter/dr-lilis.png" alt="" width="72" height="72" loading="lazy"><div><h3>dr. Nur Kholisa, Sp.M</h3><div class="sp">Spesialis Mata</div></div></div>
+        <ul class="jadwal"><li><b>Senin</b><span>16.00 – 18.00</span></li><li><b>Selasa</b><span>17.00 – 19.00</span></li><li><b>Rabu</b><span>15.00 – 18.00</span></li><li><b>Kamis</b><span>15.00 – 18.00</span></li></ul>
+      </article>
+      <article class="dokter" data-hari="senin selasa rabu kamis">
+        <div class="dokter-top"><img class="avatar" src="assets/dokter/dr-desy.png" alt="" width="72" height="72" loading="lazy"><div><h3>dr. Desy, Sp.JP</h3><div class="sp">Spesialis Jantung &amp; Pembuluh Darah</div></div></div>
+        <ul class="jadwal"><li><b>Senin – Kamis</b><span>15.30 – 18.30</span></li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- POLIKLINIK -->
+<section id="poliklinik" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Poliklinik Unggulan</span>
+      <h2>Ditangani langsung oleh dokter spesialis</h2>
+    </div>
+    <div class="poli-grid">
+      <article class="poli">
+        <div class="foto"><img src="assets/dr-sherlyana.png" alt="dr. Sherlyana, Sp.OG" loading="lazy"></div>
+        <div class="isi">
+          <span class="tag">Melayani BPJS Kesehatan</span>
+          <h3>Poliklinik Kandungan</h3>
+          <div class="dr">dr. Sherlyana, Sp.OG · Obstetri &amp; Ginekologi</div>
+          <ul><li>Pemeriksaan kehamilan</li><li>Persalinan</li><li>Operasi Sectio Caesarea (SC)</li><li>Vaksin</li><li>KB</li><li>Kuret</li></ul>
+        </div>
+      </article>
+      <article class="poli">
+        <div class="foto"><img src="assets/dr-nur-kholisa.jpg" alt="dr. Nur Kholisa Mei Andriyani, Sp.M" loading="lazy"></div>
+        <div class="isi">
+          <span class="tag">Melayani Umum &amp; BPJS</span>
+          <h3>Poliklinik Mata</h3>
+          <div class="dr">dr. Nur Kholisa Mei Andriyani, Sp.M</div>
+          <ul><li>Pemeriksaan penyakit mata</li><li>Penanganan mata buram dan rabun</li><li>Cek mata minus, plus, dan silinder</li><li>Tes buta warna</li><li>Tindakan operasi mata</li></ul>
+          <p class="note"><b>Operasi katarak Phaco Emulsification</b> — sayatan minimal, tanpa jahitan, pemulihan lebih cepat.</p>
+        </div>
+      </article>
+      <article class="poli">
+        <div class="foto"><img src="assets/dr-desy.png" alt="dr. Desy Merindasari, Sp.JP" loading="lazy"></div>
+        <div class="isi">
+          <span class="tag">Dokter baru bergabung</span>
+          <h3>Jantung &amp; Pembuluh Darah</h3>
+          <div class="dr">dr. Desy Merindasari, Sp.JP</div>
+          <ul><li>Konsultasi jantung dan pembuluh darah</li><li>Pemeriksaan jantung dan pembuluh darah</li><li>USG jantung (Echocardiography)</li><li>Rekam jantung (EKG)</li><li>Penanganan penyakit jantung dan pembuluh darah</li></ul>
+        </div>
+      </article>
+      <article class="poli">
+        <div class="foto"><img src="assets/dr-samuel.png" alt="dr. Desy Merindasari, Sp.JP" loading="lazy"></div>
+        <div class="isi">
+          <span class="tag">Endoskopi THT</span>
+          <h3>Poliklinik THT</h3>
+          <div class="dr">dr. Samuel, Sp.T.H.T.B.K.L · Senin – Kamis, 17.00 – 19.00</div>
+          <ul><li>Telinga: benda asing, kotoran menumpuk, nyeri, pendengaran menurun</li><li>Hidung: benda asing, tersumbat terus-menerus, mimisan</li><li>Tenggorokan: sulit menelan, suara serak, nyeri atau benjolan</li></ul>
+          <p class="note">Periksa dengan <b>kamera endoskopi</b> untuk melihat bagian dalam telinga, hidung, dan tenggorokan — bukan lagi pakai senter.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MCU -->
+<section id="mcu">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Medical Check-Up</span>
+      <h2>Paket MCU</h2>
+      <p class="lead">Semua paket sudah termasuk pemeriksaan dokter serta tekanan darah, suhu, pernafasan, dan detak jantung.</p>
+    </div>
+    <div class="mcu-grid">
+      <article class="mcu">
+        <h3>Sehat Mulia</h3>
+        <div class="harga">Rp328.000</div>
+        <ul><li>Pemeriksaan dokter &amp; tanda vital</li><li>Darah lengkap</li><li>Gula darah</li><li>Urin lengkap</li><li>Rontgen thorax</li></ul>
+      </article>
+      <article class="mcu">
+        <h3>Sehat Pasti</h3>
+        <div class="harga">Rp503.000</div>
+        <ul><li>Pemeriksaan dokter &amp; tanda vital</li><li>Darah lengkap</li><li>Gula darah</li><li>Asam urat</li><li>Kolesterol</li><li>Urin lengkap</li><li>Rontgen thorax</li><li>EKG (rekam jantung)</li></ul>
+      </article>
+      <article class="mcu">
+        <h3>Sehat Optimal</h3>
+        <div class="harga">Rp772.000</div>
+        <ul><li>Pemeriksaan dokter &amp; tanda vital</li><li>Darah lengkap</li><li>Gula darah</li><li>Asam urat</li><li>SGOT &amp; SGPT</li><li>Kolesterol, HDL, LDL</li><li>Trigliserida</li><li>Urin lengkap</li><li>Rontgen thorax</li><li>EKG (rekam jantung)</li></ul>
+      </article>
+      <article class="mcu pop">
+        <h3>Sehat Paripurna</h3>
+        <div class="harga">Rp1.272.000</div>
+        <ul><li>Pemeriksaan dokter &amp; tanda vital</li><li>Darah lengkap</li><li>Gula darah</li><li>Asam urat</li><li>Kolesterol, HDL/LDL</li><li>Trigliserida</li><li>Ureum &amp; kreatinin</li><li>SGOT &amp; SGPT</li><li>HIV &amp; HBsAg</li><li>Urin lengkap</li><li>EKG (rekam jantung)</li><li>Spirometri</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- IBU & ANAK -->
+<section id="ibu-anak" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Ibu &amp; Anak</span>
+      <h2>Persalinan aman, ibu tenang, bayi sehat</h2>
+      <p class="lead">Karena setiap kelahiran adalah momen berharga, keselamatan ibu dan bayi adalah prioritas utama.</p>
+    </div>
+    <div class="split">
+      <div class="panel">
+        <h3>Cek Kehamilan + USG</h3>
+        <p class="sub">Masih tebak-tebakan saat hamil? Yuk cek rutin bersama dr. Sherlyana, Sp.OG.</p>
+        <ul class="cek"><li>Bisa lihat perkembangan bayi</li><li>Tahu lebih cepat kalau ada masalah kehamilan</li><li>Tempat tanya dan curhat soal keluhan hamil</li><li>Bantu ibu lebih siap melahirkan dan menyusui</li></ul>
+        <div class="price-tag"><small>Harga periksa</small><b>Rp290.000</b><small>Termasuk konsultasi Sp.OG, USG 2D + print hasil, administrasi</small></div>
+      </div>
+      <div class="panel">
+        <h3>Paket Operasi SC (Sectio Caesarea)</h3>
+        <p class="sub">Aman &amp; terencana, didukung dokter berpengalaman, fasilitas modern, dan pendampingan pascaoperasi.</p>
+        <ul class="cek"><li>Konsultasi dan perencanaan persalinan terjadwal</li><li>Metode <b>ERACS</b> sesuai standar keselamatan medis ibu dan bayi</li><li>Pendampingan sebelum, saat, hingga pasca persalinan</li><li>Fasilitas rawat yang nyaman untuk masa pemulihan</li><li>Pelayanan ramah, komunikatif, dan informatif</li></ul>
+        <div class="price-tag"><small>Hubungi kami untuk</small><b>Harga spesial paket SC</b></div>
+      </div>
+    </div>
+
+    <div class="split" style="margin-top:22px">
+      <div class="panel">
+        <h3>Paket Persalinan Normal</h3>
+        <p class="sub">"Percayakan momen istimewa Anda kepada tim profesional kami." Termasuk tindakan dan ruangan, administrasi rawat inap, serta pemeriksaan penunjang ibu dan bayi.</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Kelas kamar</th><th class="rp">Harga</th></tr></thead>
+          <tbody>
+            <tr><td>Kelas VIP</td><td class="rp">Rp4.000.000</td></tr>
+            <tr><td>Kelas I</td><td class="rp">Rp3.200.000</td></tr>
+            <tr><td>Kelas II</td><td class="rp">Rp2.800.000</td></tr>
+            <tr><td>Kelas III</td><td class="rp">Rp2.600.000</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="panel">
+        <h3>Paket Kuretase</h3>
+        <p class="sub">Kuret umumnya dikenal sebagai prosedur medis saat keguguran, namun juga dapat dilakukan pada kondisi lainnya.</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Kelas kamar</th><th class="rp">Harga</th></tr></thead>
+          <tbody>
+            <tr><td>Kelas VIP</td><td class="rp">Rp4.500.000</td></tr>
+            <tr><td>Kelas I</td><td class="rp">Rp4.000.000</td></tr>
+            <tr><td>Kelas II</td><td class="rp">Rp3.500.000</td></tr>
+            <tr><td>Kelas III</td><td class="rp">Rp3.000.000</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RAWAT INAP -->
+<section id="rawat-inap">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Rawat Inap &amp; Operasi</span>
+      <h2>Tarif kamar rawat inap &amp; paket tindakan operasi</h2>
+    </div>
+    <div class="kelas-grid">
+      <article class="kelas">
+        <h3>Kelas VIP <span class="pill">1 kamar 1 pasien</span></h3>
+        <dl><div><dt>Rawat inap / hari</dt><dd>Rp550.000</dd></div><div><dt>Paket operasi</dt><dd>Rp6.000.000</dd></div></dl>
+        <div class="fasilitas"><span>Kamar mandi</span><span>AC</span><span>Sofa</span><span>TV</span><span>Kulkas</span></div>
+      </article>
+      <article class="kelas">
+        <h3>Kelas 1 <span class="pill">1 kamar 1 pasien</span></h3>
+        <dl><div><dt>Rawat inap / hari</dt><dd>Rp450.000</dd></div><div><dt>Paket operasi</dt><dd>Rp5.000.000</dd></div></dl>
+        <div class="fasilitas"><span>Kamar mandi</span><span>AC</span><span>Sofa</span><span>TV</span></div>
+      </article>
+      <article class="kelas">
+        <h3>Kelas 2 <span class="pill">1 kamar 2 pasien</span></h3>
+        <dl><div><dt>Rawat inap / hari</dt><dd>Rp400.000</dd></div><div><dt>Paket operasi</dt><dd>Rp4.500.000</dd></div></dl>
+        <div class="fasilitas"><span>Kamar mandi</span><span>AC</span><span>Sekat tirai</span></div>
+      </article>
+      <article class="kelas">
+        <h3>Kelas 3 <span class="pill">1 kamar 4 pasien</span></h3>
+        <dl><div><dt>Rawat inap / hari</dt><dd>Rp350.000</dd></div><div><dt>Paket operasi</dt><dd>Rp4.000.000</dd></div></dl>
+        <div class="fasilitas"><span>Kamar mandi</span><span>Kipas/AC</span><span>Sekat tirai</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- VAKSINASI -->
+<section id="vaksinasi" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Telah Hadir</span>
+      <h2>Klinik Vaksinasi</h2>
+      <p class="lead">Daftar harga vaksin untuk anak dan dewasa di Klinik Utama Citra Mulia.</p>
+    </div>
+    <div class="vaksin-tools">
+      <label class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" id="cari-vaksin" placeholder="Cari vaksin, mis. hepatitis, HPV…" aria-label="Cari vaksin">
+      </label>
+    </div>
+    <div class="tbl-wrap">
+      <table id="tabel-vaksin">
+        <thead><tr><th>Penyakit</th><th>Vaksin</th><th class="rp">Harga</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="empty" id="vaksin-kosong">Vaksin tidak ditemukan. Tanyakan via WhatsApp untuk ketersediaan.</div>
+    </div>
+
+    <div class="vaksin-promo">
+      <div class="panel">
+        <h3>Siap ke Tanah Suci? Vaksin dulu yuk!</h3>
+        <p class="sub">Langkah suci dimulai dari perlindungan diri. Dapatkan gift menarik.</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Vaksin / paket</th><th class="rp">Harga</th></tr></thead>
+          <tbody>
+            <tr><td>Vaksin Polio Injeksi</td><td class="rp">Rp270.000</td></tr>
+            <tr><td>Vaksin Influenza Flubio</td><td class="rp">Rp350.000</td></tr>
+            <tr><td>Vaksin Meningitis</td><td class="rp">Rp340.000</td></tr>
+            <tr><td><b>Paket</b> Polio + Meningitis</td><td class="rp">Rp490.000</td></tr>
+            <tr><td><b>Paket</b> Influenza + Meningitis</td><td class="rp">Rp540.000</td></tr>
+            <tr><td><b>Paket</b> Polio + Influenza + Meningitis</td><td class="rp">Rp690.000</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="panel">
+        <h3>Cegah kanker serviks dengan vaksin HPV</h3>
+        <p class="sub">Tiap 2 jam ada perempuan Indonesia meninggal karena kanker serviks — padahal bisa dicegah. Lindungi istri dan anak perempuan Anda sejak dini.</p>
+        <ul class="cek"><li>Anak perempuan usia 11 – 14 tahun</li><li>Remaja dan dewasa usia 15 tahun ke atas</li></ul>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <div class="price-tag"><small>Gardasil 4</small><b>Rp780.000</b><small>untuk 1× suntikan</small></div>
+          <div class="price-tag"><small>Gardasil 9</small><b>Rp2.760.000</b><small>untuk 1× suntikan</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOMECARE & ANTAR JEMPUT -->
+<section id="layanan-rumah">
+  <div class="wrap">
+    <div class="homecare">
+      <div>
+        <span class="eyebrow" style="background:rgba(255,255,255,.18);color:#fff">Homecare</span>
+        <h2>Sakit tapi tidak bisa ke klinik? Tenang, kami yang datang!</h2>
+        <p>Tindakan keperawatan dan fisioterapi dilakukan di rumah Anda. Satu panggilan, kami gas ke rumah Anda.</p>
+        <a class="btn btn-wa" href="https://wa.me/6281333211118?text=Halo%20Klinik%20Citra%20Mulia%2C%20saya%20ingin%20pesan%20layanan%20homecare" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Pesan Homecare</a>
+      </div>
+      <div class="hc-list">
+        <span>Infus vitamin</span><span>Injeksi vitamin</span>
+        <span>Rawat luka</span><span>Pasang kateter</span>
+        <span>Lepas kateter</span><span>Fisioterapi infrared</span>
+        <span>Fisioterapi TENS</span><span>Fisioterapi ultrasound</span>
+        <span class="full">Paket fisioterapi (Infrared, Lat Motorik, TENS, Ultrasound)</span>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin-top:64px">
+      <span class="eyebrow">Antar Jemput Pasien</span>
+      <h2>Tidak ada kendaraan? Kami hadir untuk Anda</h2>
+      <p class="lead">Solusi antar jemput pasien yang tepat waktu, aman, ramah, dengan biaya terjangkau dan transparan.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Kecamatan</th><th class="rp">Antar / jemput saja<br><small style="font-weight:500;text-transform:none;letter-spacing:0">mulai dari</small></th><th class="rp">Antar &amp; jemput<br><small style="font-weight:500;text-transform:none;letter-spacing:0">mulai dari</small></th></tr></thead>
+        <tbody>
+          <tr><td>Tunjungan</td><td class="rp">Rp64.000</td><td class="rp">Rp64.000</td></tr>
+          <tr><td>Blora</td><td class="rp">Rp81.000</td><td class="rp">Rp110.000</td></tr>
+          <tr><td>Banjarejo</td><td class="rp">Rp81.000</td><td class="rp">Rp127.000</td></tr>
+          <tr><td>Japah</td><td class="rp">Rp110.000</td><td class="rp">Rp202.000</td></tr>
+          <tr><td>Ngawen</td><td class="rp">Rp110.000</td><td class="rp">Rp156.000</td></tr>
+          <tr><td>Todanan</td><td class="rp">Rp265.000</td><td class="rp">Rp478.000</td></tr>
+          <tr><td>Kunduran</td><td class="rp">Rp202.000</td><td class="rp">Rp357.000</td></tr>
+          <tr><td>Randublatung</td><td class="rp">Rp265.000</td><td class="rp">Rp495.000</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Kontak</span>
+      <h2>Info &amp; Pendaftaran</h2>
+    </div>
+    <div class="kontak">
+      <div class="kontak-list">
+        <a href="https://wa.me/6281333211118" target="_blank" rel="noopener"><span class="ic"><svg><use href="#i-wa"/></svg></span><span><small>WhatsApp / Telepon</small><b>0813-3321-1118</b></span></a>
+        <a href="https://maps.google.com/?q=Klinik+Utama+Citra+Mulia+Blora" target="_blank" rel="noopener"><span class="ic"><svg><use href="#i-pin"/></svg></span><span><small>Alamat</small><b>Jl. Gatot Subroto Km. 4, Maguan, Tamanrejo, Tunjungan, Blora, Jawa Tengah 58252</b></span></a>
+        <a href="https://instagram.com/klinikcitramuliablora" target="_blank" rel="noopener"><span class="ic"><svg><use href="#i-ig"/></svg></span><span><small>Instagram</small><b>@klinikcitramuliablora</b></span></a>
+        <a href="https://www.tiktok.com/@klinikcitramulia" target="_blank" rel="noopener"><span class="ic"><svg><use href="#i-tt"/></svg></span><span><small>TikTok</small><b>@klinikcitramulia</b></span></a>
+        <a href="https://facebook.com/klinikutamacitramulia" target="_blank" rel="noopener"><span class="ic"><svg><use href="#i-fb"/></svg></span><span><small>Facebook</small><b>klinikutamacitramulia</b></span></a>
+      </div>
+      <div class="map">
+        <iframe title="Lokasi Klinik Utama Citra Mulia" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Klinik%20Utama%20Citra%20Mulia%20Blora&z=14&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><b>Klinik Utama Citra Mulia</b> · Terakreditasi Paripurna · Melayani pasien Umum &amp; BPJS Kesehatan</div>
+    <div>#KamiPeduliAnda</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/6281333211118" target="_blank" rel="noopener" aria-label="Chat WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<dialog id="lightbox">
+  <button class="tutup" aria-label="Tutup">×</button>
+  <button class="geser prev" aria-label="Sebelumnya">‹</button>
+  <img alt="">
+  <button class="geser next" aria-label="Berikutnya">›</button>
+</dialog>
+
+<script>
+// Menu mobile
+const burger = document.getElementById('burger'), menu = document.getElementById('menu');
+burger.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  burger.setAttribute('aria-expanded', open);
+});
+menu.addEventListener('click', e => { if (e.target.tagName === 'A') { menu.classList.remove('open'); burger.setAttribute('aria-expanded', false); } });
+
+// Filter jadwal dokter per hari
+document.querySelectorAll('.chip').forEach(chip => chip.addEventListener('click', () => {
+  document.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c === chip));
+  const hari = chip.dataset.hari;
+  document.querySelectorAll('#dokter-grid .dokter').forEach(d => {
+    d.hidden = hari !== 'semua' && !d.dataset.hari.split(' ').includes(hari);
+  });
+}));
+
+// Daftar harga vaksin
+const vaksin = [
+  ['Hepatitis B', [['Hepatitis B Dewasa Biofarma', 295000], ['Engerix B 10 mcg (Anak)', 322000], ['Engerix B 20 mcg (Dewasa)', 410000], ['Euvax B Anak', 310000], ['Euvax B Dewasa', 310000]]],
+  ['BCG', [['Vaksin BCG', 580000]]],
+  ['DPT-HB-Hib', [['Hexaxim', 1240000]]],
+  ['Campak', [['Vaksin Campak', 560000]]],
+  ['Dengue', [['Qdenga Biofarma', 775000], ['Qdenga APL', 790000]]],
+  ['HPV', [['Gardasil 4', 780000], ['Gardasil 9', 2760000]]],
+  ['Pneumonia', [['Prevenar 20', 1350000], ['Prevenar 13', 1265000], ['Synflorix', 1090000]]],
+  ['Rotavirus', [['Rotarix', 670000]]],
+  ['MR', [['MR', 610000]]],
+  ['MMR II', [['MMR II', 730000]]],
+  ['JE', [['Imojev', 650000]]],
+  ['Hepatitis A', [['Avaxim Anak', 780000], ['Avaxim Dewasa', 650000], ['Havrix Junior Healive Anak', 490000], ['Healive Dewasa', 520000]]],
+  ['Hepatitis A+B', [['Twinrix', 840000]]],
+  ['Tifoid', [['Typhim', 460000]]],
+  ['Tetanus', [['Tetagam', 620000]]],
+  ['Tetanus / Tdap', [['Boostrix', 655000]]],
+  ['Rabies', [['Verorab', 715000]]],
+  ['Flu Singapura', [['Inlive', 1235000]]],
+  ['Zoster', [['Shingrix', 3210000]]],
+  ['Varicella', [['Varicella', 685000]]],
+  ['Influenza', [['Flubio', 350000], ['Vaxigrip', 455000]]],
+  ['Polio', [['Vaksin Polio Oral', 230000], ['Vaksin Polio Injeksi', 270000]]],
+  ['Meningitis', [['Menivax', 340000]]],
+];
+const rp = n => 'Rp' + n.toLocaleString('id-ID');
+const tbody = document.querySelector('#tabel-vaksin tbody');
+function renderVaksin(q = '') {
+  q = q.trim().toLowerCase();
+  let html = '';
+  for (const [grp, items] of vaksin) {
+    const cocok = items.filter(([n]) => !q || grp.toLowerCase().includes(q) || n.toLowerCase().includes(q));
+    cocok.forEach(([n, h], i) => {
+      html += `<tr><td class="grp">${i === 0 ? grp : ''}</td><td>${n}</td><td class="rp">${rp(h)}</td></tr>`;
+    });
+  }
+  tbody.innerHTML = html;
+  document.getElementById('vaksin-kosong').style.display = html ? 'none' : 'block';
+}
+renderVaksin();
+document.getElementById('cari-vaksin').addEventListener('input', e => renderVaksin(e.target.value));
+
+// Carousel brosur + lightbox — [file, judul]
+const leaflet = [
+  ['jadwal-dokter', 'Jadwal praktek dokter'], ['jadwal-dokter-2', 'Jadwal praktek dokter (feed)'],
+  ['poli-kandungan', 'Poliklinik Kandungan'], ['cek-kehamilan', 'Cek kehamilan'],
+  ['persalinan-normal', 'Paket persalinan normal'], ['operasi-sc', 'Paket operasi SC'],
+  ['kuretase', 'Paket kuretase'], ['poli-mata', 'Poliklinik Mata'], ['katarak-phaco', 'Operasi katarak Phaco'],
+  ['poli-jantung', 'Dokter spesialis jantung'], ['endoskopi-tht', 'Endoskopi THT'],
+  ['mcu-sehat-mulia', 'MCU Sehat Mulia'], ['mcu-sehat-pasti', 'MCU Sehat Pasti'],
+  ['mcu-sehat-optimal', 'MCU Sehat Optimal'], ['mcu-sehat-paripurna', 'MCU Sehat Paripurna'],
+  ['tarif-rawat-inap', 'Tarif kamar rawat inap'], ['paket-operasi', 'Paket tindakan operasi'],
+  ['klinik-vaksinasi', 'Klinik vaksinasi'], ['vaksin-umroh-haji', 'Vaksin umroh & haji'], ['vaksin-hpv', 'Vaksin HPV'],
+  ['homecare', 'Homecare'], ['antar-jemput', 'Antar jemput pasien'],
+];
+const stage = document.getElementById('brosur-stage'), n = leaflet.length;
+stage.innerHTML = leaflet.map(([f, t], i) =>
+  `<button class="brosur-item" data-i="${i}" tabindex="-1" aria-label="${t}"><img src="assets/leaflet/${f}.jpg" alt="${t}" ${i > 2 && i < n - 2 ? 'loading="lazy"' : ''}></button>`).join('');
+const items = [...stage.children];
+let aktif = 0;
+
+// Jarak melingkar tiap kartu ke kartu aktif: 0 = depan, ±1 = samping, ±2 = siap masuk (tersembunyi)
+function render() {
+  items.forEach((el, i) => {
+    let d = (i - aktif + n) % n;
+    if (d > n / 2) d -= n;
+    el.dataset.pos = Math.abs(d) <= 2 ? d : 'x';
+    if (Math.abs(d) <= 2) el.querySelector('img').loading = 'eager';
+  });
+}
+const keItem = i => { aktif = (i + n) % n; render(); };
+const geser = arah => keItem(aktif + arah);
+render();
+
+document.getElementById('brosur-prev').onclick = () => { geser(-1); mulaiAuto(); };
+document.getElementById('brosur-next').onclick = () => { geser(1); mulaiAuto(); };
+stage.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') { e.preventDefault(); geser(1); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); geser(-1); }
+  if (e.key === 'Enter') bukaLightbox(aktif);
+});
+
+// Klik kartu depan = perbesar, klik kartu samping = pindah ke kartu itu; geser jari/mouse = ganti kartu
+let mulaiX = null, digeser = false;
+stage.addEventListener('pointerdown', e => { mulaiX = e.clientX; digeser = false; });
+stage.addEventListener('pointerup', e => {
+  if (mulaiX === null) return;
+  const dx = e.clientX - mulaiX; mulaiX = null;
+  if (Math.abs(dx) > 40) { digeser = true; geser(dx < 0 ? 1 : -1); mulaiAuto(); }
+});
+stage.addEventListener('click', e => {
+  const b = e.target.closest('.brosur-item');
+  if (!b || digeser) return;
+  const pos = +b.dataset.pos;
+  if (pos === 0) bukaLightbox(aktif); else { geser(pos); mulaiAuto(); }
+});
+
+// Ganti otomatis tiap 4 detik; berhenti saat di-hover/disentuh, saat brosur diperbesar, atau jika pengguna memilih reduced motion
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let auto, jeda = false;
+function mulaiAuto() {
+  clearInterval(auto);
+  if (!reduceMotion) auto = setInterval(() => { if (!jeda && !document.hidden && !lb.open) geser(1); }, 4000);
+}
+['mouseenter', 'focusin', 'touchstart'].forEach(ev => stage.addEventListener(ev, () => jeda = true, { passive: true }));
+['mouseleave', 'focusout', 'touchend'].forEach(ev => stage.addEventListener(ev, () => jeda = false, { passive: true }));
+
+const lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
+let idx = 0;
+const tampil = i => { idx = (i + n) % n; lbImg.src = `assets/leaflet/${leaflet[idx][0]}.jpg`; lbImg.alt = leaflet[idx][1]; };
+function bukaLightbox(i) { tampil(i); lb.showModal(); }
+lb.addEventListener('close', () => keItem(idx));
+mulaiAuto();
+lb.querySelector('.tutup').onclick = () => lb.close();
+lb.querySelector('.prev').onclick = () => tampil(idx - 1);
+lb.querySelector('.next').onclick = () => tampil(idx + 1);
+lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+lb.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') tampil(idx - 1); if (e.key === 'ArrowRight') tampil(idx + 1); });
+</script>
+</body>
+</html>
