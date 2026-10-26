@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>try{const t=localStorage.getItem('tema');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
 <title>Klinik Utama Citra Mulia Blora — Semoga Sehat Selalu</title>
 <meta name="description" content="Klinik Utama Citra Mulia Blora: jadwal dokter spesialis, paket MCU, persalinan, klinik vaksinasi, rawat inap, homecare, dan antar jemput pasien. Melayani pasien Umum & BPJS Kesehatan.">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
@@ -17,6 +19,40 @@
   --biru:#6f9cf5; --biru-tua:#3a64d8; --biru-muda:#eaf1ff;
   --teks:#2a2140; --teks-2:#5d5672; --garis:#e7e1ef; --bg:#fdfbff; --kartu:#fff;
   --radius:18px; --bayang:0 10px 30px -12px rgba(122,15,140,.25);
+  --ungu-teks:#a316b8; --biru-teks:#3a64d8; --merek:#d31f3a;
+  --header-bg:rgba(255,255,255,.92); --hero-a:#f3d4fb; --hero-b:#dfe9ff; --alt-akhir:#f6e6fa; --footer-bg:#7a0f8c;
+  --hijau-bg:#e7f7ec; --hijau-teks:#1c8b3e;
+  --merah-bg:#fff5f5; --merah-garis:#f7c9cd; --merah-lembut:#fde3e5; --merah-teks:#b3202c;
+  --kilau:rgba(255,255,255,.7); --bayang-kuat:rgba(60,10,80,.45);
+  --cek-img:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%23a316b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  color-scheme:light;
+}
+/* Mode gelap: ikut pengaturan sistem, kecuali pengguna memilih sendiri lewat tombol (data-theme) */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ungu-tua:#efc2f7; --ungu-muda:#33203f; --pink:#f06cc9;
+  --biru:#7fa6f7; --biru-muda:#1d2740;
+  --teks:#ece6f3; --teks-2:#b4aac3; --garis:#342a47; --bg:#110c19; --kartu:#1b1426;
+  --bayang:0 10px 30px -12px rgba(0,0,0,.7);
+  --ungu-teks:#e08cf0; --biru-teks:#9db8ff; --merek:#ff6b7f;
+  --header-bg:rgba(17,12,25,.88); --hero-a:#2e1541; --hero-b:#152038; --alt-akhir:#1d1229; --footer-bg:#1b1426;
+  --hijau-bg:#123222; --hijau-teks:#6fdc98;
+  --merah-bg:#2a1418; --merah-garis:#5c2530; --merah-lembut:#3d1a21; --merah-teks:#ff8f9a;
+  --kilau:rgba(255,255,255,.08); --bayang-kuat:rgba(0,0,0,.7);
+  --cek-img:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%23e08cf0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --ungu-tua:#efc2f7; --ungu-muda:#33203f; --pink:#f06cc9;
+  --biru:#7fa6f7; --biru-muda:#1d2740;
+  --teks:#ece6f3; --teks-2:#b4aac3; --garis:#342a47; --bg:#110c19; --kartu:#1b1426;
+  --bayang:0 10px 30px -12px rgba(0,0,0,.7);
+  --ungu-teks:#e08cf0; --biru-teks:#9db8ff; --merek:#ff6b7f;
+  --header-bg:rgba(17,12,25,.88); --hero-a:#2e1541; --hero-b:#152038; --alt-akhir:#1d1229; --footer-bg:#1b1426;
+  --hijau-bg:#123222; --hijau-teks:#6fdc98;
+  --merah-bg:#2a1418; --merah-garis:#5c2530; --merah-lembut:#3d1a21; --merah-teks:#ff8f9a;
+  --kilau:rgba(255,255,255,.08); --bayang-kuat:rgba(0,0,0,.7);
+  --cek-img:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%23e08cf0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  color-scheme:dark;
 }
 *{box-sizing:border-box}
 [hidden]{display:none !important}
@@ -28,33 +64,33 @@ a{color:inherit}
 @media (max-width:520px){.wrap{padding:0 16px}section{padding:56px 0}.sec-head{margin-bottom:24px}.chip{padding:7px 12px}.homecare{padding:24px 20px}.panel{padding:20px}.homecare{border-radius:20px}}
 h1,h2,h3{line-height:1.15;margin:0}
 h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.02em}
-.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--biru-tua);background:var(--biru-muda);padding:6px 12px;border-radius:99px;margin-bottom:14px}
+.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--biru-teks);background:var(--biru-muda);padding:6px 12px;border-radius:99px;margin-bottom:14px}
 .lead{color:var(--teks-2);max-width:640px;margin:12px 0 0}
 section{padding:80px 0}
 .sec-head{margin-bottom:36px}
-.alt{background:linear-gradient(180deg,#fff, var(--ungu-muda))}
+.alt{background:linear-gradient(180deg,var(--kartu), var(--alt-akhir))}
 
 /* tombol */
 .btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;border-radius:99px;padding:13px 22px;transition:transform .15s, box-shadow .15s}
 .btn:hover{transform:translateY(-2px)}
 .btn-wa{background:#22b45a;color:#fff;box-shadow:0 8px 20px -8px rgba(34,180,90,.6)}
-.btn-ghost{background:#fff;color:var(--ungu);border:2px solid var(--ungu)}
+.btn-ghost{background:var(--kartu);color:var(--ungu-teks);border:2px solid var(--ungu)}
 .btn svg{width:20px;height:20px;flex:none}
 
 /* header */
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--garis)}
+header{position:sticky;top:0;z-index:50;background:var(--header-bg);backdrop-filter:blur(10px);border-bottom:1px solid var(--garis)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;white-space:nowrap;flex:none}
 .brand-mark{height:40px;width:auto;flex:none}
 .brand small{display:block;font-size:.66rem;letter-spacing:.16em;font-weight:700;color:var(--teks-2)}
-.brand b{display:block;font-size:1.12rem;color:#d31f3a;font-weight:800;line-height:1}
+.brand b{display:block;font-size:1.12rem;color:var(--merek);font-weight:800;line-height:1}
 .menu{display:flex;gap:4px;list-style:none;margin:0;padding:0}
 .menu a{display:block;white-space:nowrap;padding:8px 10px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.92rem;color:var(--teks-2)}
-.menu a:hover{background:var(--ungu-muda);color:var(--ungu)}
-.nav .btn{padding:10px 18px;font-size:.9rem}
+.menu a:hover{background:var(--ungu-muda);color:var(--ungu-teks)}
+.nav .btn{padding:10px 18px;font-size:.9rem;white-space:nowrap}
 .burger{display:none;background:none;border:0;padding:8px;cursor:pointer;color:var(--teks)}
-@media (max-width:1180px){
-  .menu{display:none;position:absolute;top:70px;left:0;right:0;flex-direction:column;background:#fff;padding:12px 20px 20px;border-bottom:1px solid var(--garis);box-shadow:var(--bayang)}
+@media (max-width:1260px){
+  .menu{display:none;position:absolute;top:70px;left:0;right:0;flex-direction:column;background:var(--kartu);padding:12px 20px 20px;border-bottom:1px solid var(--garis);box-shadow:var(--bayang)}
   .menu.open{display:flex}
   .burger{display:block}
   .nav .btn-wa span{display:none}
@@ -62,7 +98,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdro
 }
 
 /* hero */
-.hero{padding:12px 0 48px;background:radial-gradient(900px 400px at 85% 0%, #f3d4fb 0%, transparent 60%),radial-gradient(700px 400px at 0% 30%, #dfe9ff 0%, transparent 60%);overflow:hidden}
+.hero{padding:12px 0 48px;background:radial-gradient(900px 400px at 85% 0%, var(--hero-a) 0%, transparent 60%),radial-gradient(700px 400px at 0% 30%, var(--hero-b) 0%, transparent 60%);overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
 .hero-grid>*{min-width:0}
 .hero h1{font-size:clamp(2.2rem,5.4vw,3rem);font-weight:800;letter-spacing:-.03em}
@@ -70,66 +106,69 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdro
 .hero p{font-size:1.1rem;color:var(--teks-2);margin:18px 0 28px;max-width:540px}
 .cta{display:flex;flex-wrap:wrap;gap:12px}
 .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.badge{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--garis);padding:8px 14px;border-radius:12px;font-size:.85rem;font-weight:600}
+.badge{display:flex;align-items:center;gap:8px;background:var(--kartu);border:1px solid var(--garis);padding:8px 14px;border-radius:12px;font-size:.85rem;font-weight:600}
 .badge .stars{color:#f5b301;letter-spacing:1px}
-.badge .bpjs{color:#1c8b3e;font-weight:800}
-.hero-card{background:#fff;border-radius:24px;box-shadow:var(--bayang);padding:26px;border:1px solid var(--garis)}
-.hero-card h3{font-size:1rem;color:var(--ungu);margin-bottom:14px}
+.badge .bpjs{color:var(--hijau-teks);font-weight:800}
+.hero-card{background:var(--kartu);border-radius:24px;box-shadow:var(--bayang);padding:26px;border:1px solid var(--garis)}
+.hero-card h3{font-size:1rem;color:var(--ungu-teks);margin-bottom:14px}
 .quick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .quick a{display:flex;flex-direction:column;gap:4px;padding:14px;border-radius:14px;background:var(--bg);border:1px solid var(--garis);text-decoration:none;font-weight:700;font-size:.92rem;transition:border-color .15s,background .15s}
 .quick a span{font-weight:500;font-size:.8rem;color:var(--teks-2)}
-.quick a:hover{border-color:var(--ungu);background:var(--ungu-muda)}
+.quick a:hover{border-color:var(--ungu-teks);background:var(--ungu-muda)}
 .gedung{margin-top:56px;height:200px;background:url(assets/gedung.jpg) center/cover;border-radius:24px 24px 0 0;position:relative}
-.gedung::after{content:"Kami Peduli Anda";position:absolute;right:20px;bottom:16px;background:#fff;color:var(--ungu);font-weight:800;padding:8px 16px;border-radius:99px;font-size:.95rem}
-@media (min-width:1181px){.hero{padding-right:64px}}
+.gedung::after{content:"Kami Peduli Anda";position:absolute;right:20px;bottom:16px;background:var(--kartu);color:var(--ungu-teks);font-weight:800;padding:8px 16px;border-radius:99px;font-size:.95rem}
+@media (min-width:1261px){.hero{padding-right:64px}}
 @media (max-width:860px){.hero-grid{grid-template-columns:1fr;gap:8px}.hero-card{max-width:560px;width:100%;margin:0 auto}}
 @media (max-width:400px){.hero-card{padding:18px}.quick a{padding:12px}}
 
 /* jadwal dokter */
 .filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
-.chip{border:1px solid var(--garis);background:#fff;padding:8px 14px;border-radius:99px;font:inherit;font-size:.85rem;font-weight:600;cursor:pointer;color:var(--teks-2)}
-.chip[aria-pressed="true"]{background:var(--ungu);border-color:var(--ungu);color:#fff}
+.chip{border:1px solid var(--garis);background:var(--kartu);padding:8px 14px;border-radius:99px;font:inherit;font-size:.85rem;font-weight:600;cursor:pointer;color:var(--teks-2)}
+.chip[aria-pressed="true"]{background:var(--ungu);border-color:var(--ungu-teks);color:#fff}
 .dokter-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:18px}
 .dokter{background:var(--kartu);border:1px solid var(--garis);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:14px;transition:box-shadow .2s,transform .2s}
 .dokter:hover{box-shadow:var(--bayang);transform:translateY(-3px)}
 .dokter-top{display:flex;gap:14px;align-items:center}
-.avatar{width:72px;height:72px;border-radius:50%;flex:none;object-fit:cover;background:var(--ungu-muda);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--ungu-muda)}
+.avatar{width:72px;height:72px;border-radius:50%;flex:none;object-fit:cover;background:var(--ungu-muda);box-shadow:0 0 0 3px var(--kartu),0 0 0 5px var(--ungu-muda)}
 .dokter h3{font-size:1.05rem}
-.dokter .sp{font-size:.84rem;color:var(--ungu);font-weight:600}
+.dokter .sp{font-size:.84rem;color:var(--ungu-teks);font-weight:600}
 .jadwal{list-style:none;margin:0;padding:12px 14px;background:var(--biru-muda);border-radius:12px;font-size:.88rem;display:grid;gap:4px}
 .jadwal li{display:flex;justify-content:space-between;gap:12px}
 .jadwal li b{font-weight:600;color:var(--teks)}
-.jadwal li span{font-variant-numeric:tabular-nums;color:var(--biru-tua);font-weight:700;white-space:nowrap}
+.jadwal li span{font-variant-numeric:tabular-nums;color:var(--biru-teks);font-weight:700;white-space:nowrap}
 
 /* poliklinik */
 .poli-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:22px}
-.poli{background:#fff;border:1px solid var(--garis);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:190px 1fr}
+.poli{background:var(--kartu);border:1px solid var(--garis);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:190px 1fr}
 .poli .foto{background:linear-gradient(180deg,var(--biru-muda),var(--ungu-muda));display:flex;align-items:flex-end;justify-content:center}
 .poli .foto img{width:100%;height:100%;object-fit:cover;object-position:top}
 .poli .isi{padding:22px}
-.poli .tag{font-size:.75rem;font-weight:700;color:#1c8b3e;background:#e7f7ec;padding:4px 10px;border-radius:99px;display:inline-block;margin-bottom:8px}
+.poli .tag{font-size:.75rem;font-weight:700;color:var(--hijau-teks);background:var(--hijau-bg);padding:4px 10px;border-radius:99px;display:inline-block;margin-bottom:8px}
 .poli h3{font-size:1.25rem}
-.poli .dr{font-size:.86rem;color:var(--ungu);font-weight:600;margin:4px 0 10px}
+.poli .dr{font-size:.86rem;color:var(--ungu-teks);font-weight:600;margin:4px 0 10px}
 .poli ul{margin:0;padding-left:18px;font-size:.9rem;color:var(--teks-2)}
-.poli .ikon-only{display:grid;place-items:center;color:var(--ungu)}
+.poli .ikon-only{display:grid;place-items:center;color:var(--ungu-teks)}
 .poli .ikon-only svg{width:64px;height:64px}
 .note{margin-top:12px;font-size:.85rem;background:var(--ungu-muda);border-radius:12px;padding:10px 12px;color:var(--ungu-tua)}
+.note.callout{display:flex;align-items:center;gap:12px;justify-content:space-between}
+.callout .biaya{flex:none;display:flex;flex-direction:column;align-items:center;background:linear-gradient(135deg,var(--ungu),var(--pink));color:#fff;font-weight:800;font-size:1.05rem;line-height:1.1;padding:8px 12px;border-radius:12px;white-space:nowrap}
+.callout .biaya small{font-size:.66rem;font-weight:600;opacity:.9}
 @media (max-width:520px){.poli{grid-template-columns:1fr}.poli .foto{height:260px}.poli .foto.ikon-only{display:none}}
 
 /* paket mcu */
 .mcu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px}
-.mcu{background:#fff;border:1px solid var(--garis);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;position:relative}
+.mcu{background:var(--kartu);border:1px solid var(--garis);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;position:relative}
 .mcu.pop{border:2px solid var(--ungu);box-shadow:var(--bayang)}
 .mcu.pop::before{content:"Terlengkap";position:absolute;top:-12px;left:24px;background:var(--ungu);color:#fff;font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:99px}
 .mcu h3{font-size:1.1rem}
-.harga{font-size:1.75rem;font-weight:800;color:var(--ungu);margin:8px 0 14px;letter-spacing:-.02em}
+.harga{font-size:1.75rem;font-weight:800;color:var(--ungu-teks);margin:8px 0 14px;letter-spacing:-.02em}
 .harga small{font-size:.8rem;font-weight:600;color:var(--teks-2)}
 .mcu ul{list-style:none;padding:0;margin:0;display:grid;gap:6px;font-size:.88rem;color:var(--teks-2)}
 .mcu li{display:flex;gap:8px}
-.mcu li::before{content:"";flex:none;width:16px;height:16px;margin-top:3px;border-radius:50%;background:var(--ungu-muda) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%23a316b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/12px no-repeat}
+.mcu li::before{content:"";flex:none;width:16px;height:16px;margin-top:3px;border-radius:50%;background:var(--ungu-muda) var(--cek-img) center/12px no-repeat}
 
 /* tabel */
-.tbl-wrap{background:#fff;border:1px solid var(--garis);border-radius:var(--radius);overflow:auto}
+.tbl-wrap{background:var(--kartu);border:1px solid var(--garis);border-radius:var(--radius);overflow:auto}
 table{width:100%;border-collapse:collapse;font-size:.92rem}
 th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--garis)}
 th{background:var(--ungu);color:#fff;font-weight:700;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
@@ -140,21 +179,22 @@ th.rp{text-align:right}
 
 /* kartu kelas */
 .kelas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px}
-.kelas{background:#fff;border:1px solid var(--garis);border-radius:var(--radius);padding:22px}
+.kelas{background:var(--kartu);border:1px solid var(--garis);border-radius:var(--radius);padding:22px}
 .kelas h3{font-size:1.05rem;display:flex;justify-content:space-between;align-items:center}
-.kelas .pill{background:var(--ungu-muda);color:var(--ungu);font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:99px}
+.kelas .pill{background:var(--ungu-muda);color:var(--ungu-teks);font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:99px}
 .kelas dl{margin:14px 0;display:grid;gap:8px}
 .kelas dl div{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;background:var(--bg);border-radius:10px;font-size:.88rem}
 .kelas dt{color:var(--teks-2)}
 .kelas dd{margin:0;font-weight:800;color:var(--ungu-tua);font-variant-numeric:tabular-nums;white-space:nowrap}
 .fasilitas{display:flex;flex-wrap:wrap;gap:6px}
-.fasilitas span{font-size:.78rem;border:1px solid var(--garis);padding:4px 10px;border-radius:99px;color:var(--teks-2)}
+.fasilitas span{display:inline-flex;align-items:center;gap:5px;font-size:.78rem;border:1px solid var(--garis);padding:4px 10px 4px 8px;border-radius:99px;color:var(--teks-2)}
+.fasilitas svg{width:14px;height:14px;flex:none;color:var(--ungu-teks)}
 
 /* ibu & anak */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .split>*,.vaksin-promo>*,.poli-grid>*,.kontak>*{min-width:0}
 @media (max-width:860px){.split{grid-template-columns:1fr}}
-.panel{background:#fff;border:1px solid var(--garis);border-radius:24px;padding:28px}
+.panel{background:var(--kartu);border:1px solid var(--garis);border-radius:24px;padding:28px}
 .panel h3{font-size:1.25rem;margin-bottom:6px}
 .panel .sub{color:var(--teks-2);font-size:.92rem;margin:0 0 16px}
 .panel ul.cek{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:.92rem}
@@ -167,15 +207,34 @@ th.rp{text-align:right}
 /* vaksin */
 .vaksin-tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:16px}
 .search{flex:1;min-width:220px;max-width:380px;position:relative}
-.search input{width:100%;font:inherit;padding:12px 16px 12px 42px;border-radius:99px;border:1px solid var(--garis);background:#fff}
+.search input{width:100%;font:inherit;color:var(--teks);padding:12px 16px 12px 42px;border-radius:99px;border:1px solid var(--garis);background:var(--kartu)}
 .search input:focus{outline:2px solid var(--ungu);outline-offset:1px}
 .search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--teks-2)}
-td.grp{font-weight:700;color:var(--ungu)}
+td.grp{font-weight:700;color:var(--ungu-teks)}
 .vaksin-promo{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px;margin-top:28px}
 .empty{padding:24px;text-align:center;color:var(--teks-2);display:none}
 
+/* ambulans darurat */
+.ambulans{--merah:#d92d3a;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;background:var(--merah-bg);border:2px solid var(--merah-garis);border-radius:24px;padding:24px 28px;margin-bottom:40px}
+.amb-ikon{width:76px;height:76px;border-radius:50%;background:var(--merah);color:#fff;display:grid;place-items:center;align-content:center;font-weight:800;font-size:1.6rem;line-height:1;box-shadow:0 0 0 6px var(--merah-lembut)}
+.amb-ikon small{font-size:.62rem;letter-spacing:.14em;margin-top:2px}
+.amb-label{display:inline-block;font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--merah-teks);margin-bottom:4px}
+.ambulans h2{font-size:clamp(1.25rem,2.4vw,1.6rem)}
+.ambulans p{margin:6px 0 0;color:var(--teks-2);font-size:.92rem}
+.amb-aksi{display:flex;flex-direction:column;gap:10px}
+.amb-tel{background:var(--merah);color:#fff;box-shadow:0 8px 20px -8px rgba(217,45,58,.6)}
+.amb-aksi .btn{justify-content:center;white-space:nowrap}
+@media (max-width:860px){.ambulans{grid-template-columns:auto 1fr}.amb-aksi{grid-column:1/-1;flex-direction:row;flex-wrap:wrap}.amb-aksi .btn{flex:1 1 220px}}
+@media (max-width:520px){.ambulans{grid-template-columns:1fr;padding:20px;text-align:left}.amb-ikon{width:60px;height:60px;font-size:1.25rem}}
+.darurat{display:flex;align-items:center;gap:10px;margin-top:12px;padding:12px 14px;border-radius:14px;background:var(--merah-bg);border:1px solid var(--merah-garis);color:var(--merah-teks);text-decoration:none;font-size:.88rem}
+.darurat svg{width:20px;height:20px;flex:none}
+.darurat .no{margin-left:auto;white-space:nowrap}
+.darurat:hover{background:var(--merah-lembut)}
+.kontak-list .kontak-darurat .ic{background:var(--merah-lembut);color:var(--merah-teks)}
+@media (max-width:420px){.darurat{flex-wrap:wrap}.darurat .no{margin-left:30px}}
+
 /* homecare */
-.homecare{background:linear-gradient(135deg,var(--biru-tua),var(--ungu));color:#fff;border-radius:28px;padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.homecare{background:linear-gradient(135deg,#3a64d8,#a316b8);color:#fff;border-radius:28px;padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
 .homecare h2{color:#fff}
 .homecare p{opacity:.92}
 .hc-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -186,15 +245,19 @@ td.grp{font-weight:700;color:var(--ungu)}
 
 /* carousel brosur — model tumpuk (coverflow) di kolom kiri hero: 1 kartu depan, kiri/kanan di belakang */
 .brosur{margin:20px 0 26px;position:relative}
-.brosur-btn{position:absolute;top:50%;z-index:4;transform:translateY(-50%);box-shadow:0 6px 16px -6px rgba(60,10,80,.35);width:40px;height:40px;border-radius:50%;border:1px solid var(--garis);background:#fff;color:var(--ungu);font-size:1.5rem;line-height:1;cursor:pointer;display:grid;place-items:center;transition:background .15s,color .15s}
-.brosur-btn:hover{background:var(--ungu);color:#fff;border-color:var(--ungu)}
+.brosur-btn{position:absolute;top:50%;z-index:4;transform:translateY(-50%);box-shadow:0 6px 16px -6px rgba(60,10,80,.35);width:40px;height:40px;border-radius:50%;border:1px solid var(--garis);background:var(--kartu);color:var(--ungu-teks);font-size:1.5rem;line-height:1;cursor:pointer;display:grid;place-items:center;transition:background .15s,color .15s}
+.brosur-btn:hover{background:var(--ungu);color:#fff;border-color:var(--ungu-teks)}
 .brosur-btn.prev{left:0}.brosur-btn.next{right:0}
-.brosur-stage{--w:clamp(180px,19vw,240px);position:relative;height:calc(var(--w) * 16 / 9 + 30px);touch-action:pan-y;user-select:none}
+.brosur-stage{--w:clamp(210px,23vw,290px);position:relative;height:calc(var(--w) * 5 / 4 + 30px);touch-action:pan-y;user-select:none}
 .brosur-stage:focus-visible{outline:2px solid var(--ungu);outline-offset:4px;border-radius:20px}
-.brosur-item{position:absolute;top:12px;left:50%;width:var(--w);aspect-ratio:9/16;margin-left:calc(var(--w) / -2);padding:0;border:0;border-radius:22px;overflow:hidden;cursor:pointer;
-  background:linear-gradient(180deg,#fff,var(--ungu-muda));box-shadow:0 30px 50px -20px rgba(60,10,80,.45);
+.brosur-item{position:absolute;top:12px;left:50%;width:var(--w);aspect-ratio:4/5;margin-left:calc(var(--w) / -2);padding:0;border:0;border-radius:22px;overflow:hidden;cursor:pointer;
+  background:linear-gradient(180deg,var(--kartu),var(--ungu-muda));box-shadow:0 30px 50px -20px var(--bayang-kuat);
   transition:transform .55s cubic-bezier(.22,.8,.3,1),opacity .55s,filter .55s;opacity:0;pointer-events:none;transform:scale(.6)}
-.brosur-item img{width:100%;height:100%;object-fit:contain;pointer-events:none;-webkit-user-drag:none}
+.brosur-item img{width:100%;height:100%;object-fit:contain;pointer-events:none;-webkit-user-drag:none;opacity:0;transition:opacity .4s}
+.brosur-item.dimuat img{opacity:1}
+.brosur-item:not(.dimuat)::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,var(--kilau) 50%,transparent 70%) var(--ungu-muda);background-size:250% 100%;animation:kilau 1.4s linear infinite}
+.brosur-item.gagal::before{animation:none}
+@keyframes kilau{from{background-position:120% 0}to{background-position:-120% 0}}
 .brosur-item[data-pos="0"]{transform:none;opacity:1;z-index:3;pointer-events:auto;cursor:zoom-in}
 .brosur-item[data-pos="-1"],.brosur-item[data-pos="1"]{opacity:1;z-index:2;pointer-events:auto;filter:brightness(.82) saturate(.9)}
 .brosur-item[data-pos="-1"]{transform:translateX(-58%) scale(.82)}
@@ -203,32 +266,46 @@ td.grp{font-weight:700;color:var(--ungu)}
 .brosur-item[data-pos="-2"]{transform:translateX(-100%) scale(.66)}
 .brosur-item[data-pos="2"]{transform:translateX(100%) scale(.66)}
 .brosur-item[data-pos="-1"]:hover,.brosur-item[data-pos="1"]:hover{filter:none}
-@media (max-width:860px) and (min-width:521px){.brosur-stage{--w:min(36vw,260px)}}
-@media (max-width:520px){.brosur-stage{--w:58vw}.brosur-item[data-pos="-1"]{transform:translateX(-42%) scale(.78)}.brosur-item[data-pos="1"]{transform:translateX(42%) scale(.78)}}
-@media (prefers-reduced-motion:reduce){.brosur-item{transition:none}}
+@media (max-width:860px) and (min-width:521px){.brosur-stage{--w:min(42vw,320px)}}
+@media (max-width:520px){.brosur-stage{--w:66vw}.brosur-item[data-pos="-1"]{transform:translateX(-42%) scale(.78)}.brosur-item[data-pos="1"]{transform:translateX(42%) scale(.78)}}
+@media (prefers-reduced-motion:reduce){.brosur-item{transition:none}.brosur-item::before{animation:none!important}}
 dialog{border:0;padding:0;background:transparent;max-width:min(92vw,560px);max-height:92vh}
 dialog::backdrop{background:rgba(20,10,30,.8)}
 dialog img{max-height:88vh;width:auto;margin:auto;border-radius:12px}
-dialog .tutup{position:fixed;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;font-size:1.4rem;cursor:pointer}
-dialog .geser{position:fixed;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:#fff;font-size:1.3rem;cursor:pointer}
+dialog .tutup{position:fixed;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:#2a2140;font-size:1.4rem;cursor:pointer}
+dialog .geser{position:fixed;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:#2a2140;font-size:1.3rem;cursor:pointer}
 dialog .prev{left:16px} dialog .next{right:16px}
 
 /* kontak */
 .kontak{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
 @media (max-width:860px){.kontak{grid-template-columns:1fr}}
 .kontak-list{display:grid;gap:12px}
-.kontak-list a,.kontak-list div{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--garis);border-radius:16px;padding:16px 18px;text-decoration:none}
-.kontak-list .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;flex:none;background:var(--ungu-muda);color:var(--ungu)}
+.kontak-list a,.kontak-list div{display:flex;gap:14px;align-items:center;background:var(--kartu);border:1px solid var(--garis);border-radius:16px;padding:16px 18px;text-decoration:none}
+.kontak-list .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;flex:none;background:var(--ungu-muda);color:var(--ungu-teks)}
 .kontak-list .ic svg{width:22px;height:22px}
 .kontak-list small{display:block;color:var(--teks-2);font-size:.8rem}
 .kontak-list b{font-weight:700}
 .map{border-radius:20px;overflow:hidden;border:1px solid var(--garis);min-height:320px}
 .map iframe{width:100%;height:100%;min-height:320px;border:0}
 
-footer{background:var(--ungu-tua);color:#f3dcf8;padding:36px 0;font-size:.88rem}
+footer{background:var(--footer-bg);color:#f3dcf8;border-top:1px solid var(--garis);padding:36px 0;font-size:.88rem}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
 footer b{color:#fff}
 
+/* tombol tema */
+.tema{width:42px;height:42px;flex:none;border-radius:50%;border:1px solid var(--garis);background:var(--kartu);color:var(--teks);cursor:pointer;display:grid;place-items:center}
+.tema:hover{border-color:var(--ungu);color:var(--ungu-teks)}
+.tema svg{width:20px;height:20px}
+.tema .bulan{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tema .bulan{display:block}:root:not([data-theme="light"]) .tema .matahari{display:none}}
+:root[data-theme="dark"] .tema .bulan{display:block}:root[data-theme="dark"] .tema .matahari{display:none}
+/* tombol kembali ke atas */
+.ke-atas{position:fixed;right:25px;bottom:90px;z-index:60;width:44px;height:44px;border-radius:50%;border:1px solid var(--garis);background:var(--kartu);color:var(--ungu-teks);box-shadow:var(--bayang);cursor:pointer;display:grid;place-items:center;
+  opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s,transform .25s,visibility .25s}
+.ke-atas.tampil{opacity:1;visibility:visible;transform:none}
+.ke-atas:hover{background:var(--ungu);color:#fff;border-color:var(--ungu)}
+.ke-atas svg{width:20px;height:20px}
+@media (prefers-reduced-motion:reduce){.ke-atas{transition:none}html{scroll-behavior:auto}}
 .wa-float{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#22b45a;color:#fff;display:grid;place-items:center;box-shadow:0 10px 24px -6px rgba(34,180,90,.7)}
 .wa-float svg{width:30px;height:30px}
 </style>
@@ -240,6 +317,18 @@ footer b{color:#fff}
   <symbol id="i-ig" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Z"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></symbol>
   <symbol id="i-tt" viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 3c.4 2.3 1.9 3.8 4.2 4v3.1a7.4 7.4 0 0 1-4.1-1.3v6.4A6 6 0 1 1 10.6 9v3.2a2.8 2.8 0 1 0 2.9 2.8V3h3.1Z"/></symbol>
   <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M14 8V6.3c0-.8.2-1.3 1.4-1.3H17V2h-2.6C11.3 2 10.4 3.6 10.4 6.2V8H8v3h2.4v11H14V11h2.6l.4-3H14Z"/></symbol>
+  <symbol id="i-matahari" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"/></symbol>
+  <symbol id="i-bulan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/></symbol>
+  <symbol id="i-atas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></symbol>
+  <!-- ikon fasilitas: Heroicons v2 (tv, view-columns) + Lucide/ISC (shower-head, air-vent, sofa, refrigerator, fan) -->
+  <symbol id="f-tv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20.25h12m-7.5-3v3m3-3v3m-10.125-3h17.25c.621 0 1.125-.504 1.125-1.125V4.875c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125Z"/></symbol>
+  <symbol id="f-tirai" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4.5v15m6-15v15m-10.875 0h15.75c.621 0 1.125-.504 1.125-1.125V5.625c0-.621-.504-1.125-1.125-1.125H4.125C3.504 4.5 3 5.004 3 5.625v12.75c0 .621.504 1.125 1.125 1.125Z"/></symbol>
+  <symbol id="f-mandi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m4 4 2.5 2.5M13.5 6.5a4.95 4.95 0 0 0-7 7M15 5 5 15M14 17v.01M10 16v.01M13 13v.01M16 10v.01M11 20v.01M17 14v.01M20 11v.01"/></symbol>
+  <symbol id="f-ac" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 17.5a2.5 2.5 0 1 1-4 2.03V12M6 12H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 8h12M6.6 15.572A2 2 0 1 0 10 17v-5"/></symbol>
+  <symbol id="f-sofa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3M2 16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0zM4 18v2M20 18v2M12 4v9"/></symbol>
+  <symbol id="f-kulkas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6ZM5 10h14M15 7v6"/></symbol>
+  <symbol id="f-kipas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10.827 16.379a6.082 6.082 0 0 1-8.618-7.002l5.412 1.45a6.082 6.082 0 0 1 7.002-8.618l-1.45 5.412a6.082 6.082 0 0 1 8.618 7.002l-5.412-1.45a6.082 6.082 0 0 1-7.002 8.618l1.45-5.412ZM12 12v.01"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 21s-7-6.2-7-11.5a7 7 0 1 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
 </svg>
 
@@ -260,6 +349,7 @@ footer b{color:#fff}
       <li><a href="#kontak">Kontak</a></li>
     </ul>
     <div style="display:flex;gap:6px;align-items:center">
+      <button class="tema" id="tema" aria-label="Ganti mode terang/gelap"><svg class="matahari"><use href="#i-matahari"/></svg><svg class="bulan"><use href="#i-bulan"/></svg></button>
       <a class="btn btn-wa" href="https://wa.me/6281333211118" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span>Daftar via WA</span></a>
       <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="menu">
         <svg width="26" height="26" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -291,6 +381,7 @@ footer b{color:#fff}
           <a href="#rawat-inap">Rawat Inap<span>Kelas VIP – 3</span></a>
           <a href="#layanan-rumah">Homecare &amp; Antar Jemput<span>Kami yang datang</span></a>
         </div>
+        <a class="darurat"  ><svg><use href="#i-tel"/></svg><span>Darurat? <b>Ambulan 24 jam</b></span><b class="no">0821-8818-8119</b></a>
       </div>
     </div>
   </div>
@@ -302,7 +393,7 @@ footer b{color:#fff}
     <div class="sec-head">
       <span class="eyebrow">Jadwal Praktek</span>
       <h2>Jadwal Praktek Dokter Spesialis</h2>
-      <p class="lead">Semua jadwal dalam WIB. Daftar lebih dulu melalui WhatsApp agar antrean Anda tercatat.</p>
+      <p class="lead">Daftar lebih dulu melalui WhatsApp agar antrean Anda tercatat.</p>
     </div>
     <div class="filter" role="group" aria-label="Filter hari praktek">
       <button class="chip" aria-pressed="true" data-hari="semua">Semua hari</button>
@@ -369,7 +460,7 @@ footer b{color:#fff}
       <article class="poli">
         <div class="foto"><img src="assets/dr-sherlyana.png" alt="dr. Sherlyana, Sp.OG" loading="lazy"></div>
         <div class="isi">
-          <span class="tag">Melayani BPJS Kesehatan</span>
+          <span class="tag">Melayani Umum & BPJS</span>
           <h3>Poliklinik Kandungan</h3>
           <div class="dr">dr. Sherlyana, Sp.OG · Obstetri &amp; Ginekologi</div>
           <ul><li>Pemeriksaan kehamilan</li><li>Persalinan</li><li>Operasi Sectio Caesarea (SC)</li><li>Vaksin</li><li>KB</li><li>Kuret</li></ul>
@@ -395,13 +486,13 @@ footer b{color:#fff}
         </div>
       </article>
       <article class="poli">
-        <div class="foto"><img src="assets/dr-samuel.png" alt="dr. Desy Merindasari, Sp.JP" loading="lazy"></div>
+        <div class="foto"><img src="assets/dr-samuel.png" alt="dr. Samuel, Sp.T.H.T.B.K.L" loading="lazy"></div>
         <div class="isi">
           <span class="tag">Endoskopi THT</span>
           <h3>Poliklinik THT</h3>
-          <div class="dr">dr. Samuel, Sp.T.H.T.B.K.L · Senin – Kamis, 17.00 – 19.00</div>
-          <ul><li>Telinga: benda asing, kotoran menumpuk, nyeri, pendengaran menurun</li><li>Hidung: benda asing, tersumbat terus-menerus, mimisan</li><li>Tenggorokan: sulit menelan, suara serak, nyeri atau benjolan</li></ul>
-          <p class="note">Periksa dengan <b>kamera endoskopi</b> untuk melihat bagian dalam telinga, hidung, dan tenggorokan — bukan lagi pakai senter.</p>
+          <div class="dr">dr. Samuel, Sp.T.H.T.B.K.L</div>
+          <ul><li>Keluhan telinga dan pendengaran</li><li>Hidung tersumbat dan mimisan</li><li>Sakit tenggorokan dan susah menelan</li><li>Pemeriksaan kamera endoskopi</li><li>Operasi amandel</li></ul>
+          <div class="note callout"><span><b>Operasi amandel</b><br>Untuk radang amandel kronis yang sering kambuh.</span><span class="biaya"><small>Mulai</small>Rp 4 jt</span></div>
         </div>
       </article>
     </div>
@@ -414,7 +505,7 @@ footer b{color:#fff}
     <div class="sec-head">
       <span class="eyebrow">Medical Check-Up</span>
       <h2>Paket MCU</h2>
-      <p class="lead">Semua paket sudah termasuk pemeriksaan dokter serta tekanan darah, suhu, pernafasan, dan detak jantung.</p>
+      <p class="lead">Semua paket sudah termasuk pemeriksaan dokter.</p>
     </div>
     <div class="mcu-grid">
       <article class="mcu">
@@ -446,7 +537,7 @@ footer b{color:#fff}
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Ibu &amp; Anak</span>
-      <h2>Persalinan aman, ibu tenang, bayi sehat</h2>
+      <h2>Persalinan aman, Ibu tenang, Bayi sehat</h2>
       <p class="lead">Karena setiap kelahiran adalah momen berharga, keselamatan ibu dan bayi adalah prioritas utama.</p>
     </div>
     <div class="split">
@@ -467,7 +558,7 @@ footer b{color:#fff}
     <div class="split" style="margin-top:22px">
       <div class="panel">
         <h3>Paket Persalinan Normal</h3>
-        <p class="sub">"Percayakan momen istimewa Anda kepada tim profesional kami." Termasuk tindakan dan ruangan, administrasi rawat inap, serta pemeriksaan penunjang ibu dan bayi.</p>
+        <p class="sub"><em style="font-style: italic;">"Percayakan momen istimewa Anda kepada tim profesional kami."</em> Termasuk tindakan dan ruangan, administrasi rawat inap, serta pemeriksaan penunjang ibu dan bayi.</p>
         <div class="tbl-wrap"><table>
           <thead><tr><th>Kelas kamar</th><th class="rp">Harga</th></tr></thead>
           <tbody>
@@ -506,22 +597,22 @@ footer b{color:#fff}
       <article class="kelas">
         <h3>Kelas VIP <span class="pill">1 kamar 1 pasien</span></h3>
         <dl><div><dt>Rawat inap / hari</dt><dd>Rp550.000</dd></div><div><dt>Paket operasi</dt><dd>Rp6.000.000</dd></div></dl>
-        <div class="fasilitas"><span>Kamar mandi</span><span>AC</span><span>Sofa</span><span>TV</span><span>Kulkas</span></div>
+        <div class="fasilitas"><span><svg aria-hidden="true"><use href="#f-mandi"/></svg>Kamar mandi</span><span><svg aria-hidden="true"><use href="#f-ac"/></svg>AC</span><span><svg aria-hidden="true"><use href="#f-sofa"/></svg>Sofa</span><span><svg aria-hidden="true"><use href="#f-tv"/></svg>TV</span><span><svg aria-hidden="true"><use href="#f-kulkas"/></svg>Kulkas</span></div>
       </article>
       <article class="kelas">
         <h3>Kelas 1 <span class="pill">1 kamar 1 pasien</span></h3>
         <dl><div><dt>Rawat inap / hari</dt><dd>Rp450.000</dd></div><div><dt>Paket operasi</dt><dd>Rp5.000.000</dd></div></dl>
-        <div class="fasilitas"><span>Kamar mandi</span><span>AC</span><span>Sofa</span><span>TV</span></div>
+        <div class="fasilitas"><span><svg aria-hidden="true"><use href="#f-mandi"/></svg>Kamar mandi</span><span><svg aria-hidden="true"><use href="#f-ac"/></svg>AC</span><span><svg aria-hidden="true"><use href="#f-sofa"/></svg>Sofa</span><span><svg aria-hidden="true"><use href="#f-tv"/></svg>TV</span></div>
       </article>
       <article class="kelas">
         <h3>Kelas 2 <span class="pill">1 kamar 2 pasien</span></h3>
         <dl><div><dt>Rawat inap / hari</dt><dd>Rp400.000</dd></div><div><dt>Paket operasi</dt><dd>Rp4.500.000</dd></div></dl>
-        <div class="fasilitas"><span>Kamar mandi</span><span>AC</span><span>Sekat tirai</span></div>
+        <div class="fasilitas"><span><svg aria-hidden="true"><use href="#f-mandi"/></svg>Kamar mandi</span><span><svg aria-hidden="true"><use href="#f-ac"/></svg>AC</span><span><svg aria-hidden="true"><use href="#f-tirai"/></svg>Sekat tirai</span></div>
       </article>
       <article class="kelas">
         <h3>Kelas 3 <span class="pill">1 kamar 4 pasien</span></h3>
         <dl><div><dt>Rawat inap / hari</dt><dd>Rp350.000</dd></div><div><dt>Paket operasi</dt><dd>Rp4.000.000</dd></div></dl>
-        <div class="fasilitas"><span>Kamar mandi</span><span>Kipas/AC</span><span>Sekat tirai</span></div>
+        <div class="fasilitas"><span><svg aria-hidden="true"><use href="#f-mandi"/></svg>Kamar mandi</span><span><svg aria-hidden="true"><use href="#f-kipas"/></svg>Kipas/AC</span><span><svg aria-hidden="true"><use href="#f-tirai"/></svg>Sekat tirai</span></div>
       </article>
     </div>
   </div>
@@ -581,11 +672,24 @@ footer b{color:#fff}
 <!-- HOMECARE & ANTAR JEMPUT -->
 <section id="layanan-rumah">
   <div class="wrap">
+    <div class="ambulans" id="ambulans">
+      <div class="amb-ikon" aria-hidden="true">24<small>JAM</small></div>
+      <div class="amb-teks">
+        <span class="amb-label">Kondisi darurat?</span>
+        <h2>Ambulan siap jemput</h2>
+        <p>Layanan ambulan 24 jam Klinik Utama Citra Mulia. Hubungi nomor darurat kami kapan saja.</p>
+      </div>
+      <div class="amb-aksi">
+        <a class="btn amb-tel" href="tel:+6282188188119"><svg><use href="#i-tel"/></svg>Telepon 0821-8818-8119</a>
+        <a class="btn btn-wa" href="https://wa.me/6282188188119?text=DARURAT%20%E2%80%94%20saya%20butuh%20ambulans" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp darurat</a>
+      </div>
+    </div>
+
     <div class="homecare">
       <div>
         <span class="eyebrow" style="background:rgba(255,255,255,.18);color:#fff">Homecare</span>
         <h2>Sakit tapi tidak bisa ke klinik? Tenang, kami yang datang!</h2>
-        <p>Tindakan keperawatan dan fisioterapi dilakukan di rumah Anda. Satu panggilan, kami gas ke rumah Anda.</p>
+        <p>Tindakan keperawatan dan fisioterapi dilakukan di rumah Anda. Satu panggilan, kami menuju ke rumah Anda.</p>
         <a class="btn btn-wa" href="https://wa.me/6281333211118?text=Halo%20Klinik%20Citra%20Mulia%2C%20saya%20ingin%20pesan%20layanan%20homecare" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Pesan Homecare</a>
       </div>
       <div class="hc-list">
@@ -600,7 +704,7 @@ footer b{color:#fff}
     <div class="sec-head" style="margin-top:64px">
       <span class="eyebrow">Antar Jemput Pasien</span>
       <h2>Tidak ada kendaraan? Kami hadir untuk Anda</h2>
-      <p class="lead">Solusi antar jemput pasien yang tepat waktu, aman, ramah, dengan biaya terjangkau dan transparan.</p>
+      <p class="lead">Solusi antar jemput pasien yang tepat waktu, dengan biaya terjangkau.</p>
     </div>
     <div class="tbl-wrap">
       <table>
@@ -630,6 +734,7 @@ footer b{color:#fff}
     <div class="kontak">
       <div class="kontak-list">
         <a href="https://wa.me/6281333211118" target="_blank" rel="noopener"><span class="ic"><svg><use href="#i-wa"/></svg></span><span><small>WhatsApp / Telepon</small><b>0813-3321-1118</b></span></a>
+        <a href="tel:+6282188188119" class="kontak-darurat"><span class="ic"><svg><use href="#i-tel"/></svg></span><span><small>Ambulan darurat 24 jam</small><b>0821-8818-8119</b></span></a>
         <a href="https://maps.google.com/?q=Klinik+Utama+Citra+Mulia+Blora" target="_blank" rel="noopener"><span class="ic"><svg><use href="#i-pin"/></svg></span><span><small>Alamat</small><b>Jl. Gatot Subroto Km. 4, Maguan, Tamanrejo, Tunjungan, Blora, Jawa Tengah 58252</b></span></a>
         <a href="https://instagram.com/klinikcitramuliablora" target="_blank" rel="noopener"><span class="ic"><svg><use href="#i-ig"/></svg></span><span><small>Instagram</small><b>@klinikcitramuliablora</b></span></a>
         <a href="https://www.tiktok.com/@klinikcitramulia" target="_blank" rel="noopener"><span class="ic"><svg><use href="#i-tt"/></svg></span><span><small>TikTok</small><b>@klinikcitramulia</b></span></a>
@@ -650,6 +755,7 @@ footer b{color:#fff}
   </div>
 </footer>
 
+<button class="ke-atas" id="ke-atas" aria-label="Kembali ke atas"><svg><use href="#i-atas"/></svg></button>
 <a class="wa-float" href="https://wa.me/6281333211118" target="_blank" rel="noopener" aria-label="Chat WhatsApp"><svg><use href="#i-wa"/></svg></a>
 
 <dialog id="lightbox">
@@ -661,6 +767,31 @@ footer b{color:#fff}
 
 <script>
 // Menu mobile
+// Tema terang/gelap: default mengikuti sistem; pilihan pengguna disimpan di browser
+const root = document.documentElement, sistemGelap = matchMedia('(prefers-color-scheme: dark)');
+const temaAktif = () => root.dataset.theme || (sistemGelap.matches ? 'dark' : 'light');
+const tombolTema = document.getElementById('tema');
+const labelTema = () => tombolTema.setAttribute('aria-label', temaAktif() === 'dark' ? 'Ganti ke mode terang' : 'Ganti ke mode gelap');
+tombolTema.addEventListener('click', () => {
+  const baru = temaAktif() === 'dark' ? 'light' : 'dark';
+  root.dataset.theme = baru;
+  try { localStorage.setItem('tema', baru); } catch (e) {}
+  labelTema();
+});
+sistemGelap.addEventListener('change', labelTema);
+labelTema();
+
+// Tombol kembali ke atas: muncul setelah menggulir melewati satu layar
+const keAtas = document.getElementById('ke-atas');
+const cekGulir = () => keAtas.classList.toggle('tampil', scrollY > innerHeight * .8);
+addEventListener('scroll', cekGulir, { passive: true });
+cekGulir();
+keAtas.addEventListener('click', () => {
+  scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  document.querySelector('.brand').focus({ preventScroll: true });
+  requestAnimationFrame(cekGulir);
+});
+
 const burger = document.getElementById('burger'), menu = document.getElementById('menu');
 burger.addEventListener('click', () => {
   const open = menu.classList.toggle('open');
@@ -720,24 +851,43 @@ function renderVaksin(q = '') {
 renderVaksin();
 document.getElementById('cari-vaksin').addEventListener('input', e => renderVaksin(e.target.value));
 
-// Carousel brosur + lightbox — [file, judul]
+// Carousel brosur + lightbox — [nomor file di leaflet/, judul], urut sesuai tampilan di carousel
 const leaflet = [
-  ['jadwal-dokter', 'Jadwal praktek dokter'], ['jadwal-dokter-2', 'Jadwal praktek dokter (feed)'],
-  ['poli-kandungan', 'Poliklinik Kandungan'], ['cek-kehamilan', 'Cek kehamilan'],
-  ['persalinan-normal', 'Paket persalinan normal'], ['operasi-sc', 'Paket operasi SC'],
-  ['kuretase', 'Paket kuretase'], ['poli-mata', 'Poliklinik Mata'], ['katarak-phaco', 'Operasi katarak Phaco'],
-  ['poli-jantung', 'Dokter spesialis jantung'], ['endoskopi-tht', 'Endoskopi THT'],
-  ['mcu-sehat-mulia', 'MCU Sehat Mulia'], ['mcu-sehat-pasti', 'MCU Sehat Pasti'],
-  ['mcu-sehat-optimal', 'MCU Sehat Optimal'], ['mcu-sehat-paripurna', 'MCU Sehat Paripurna'],
-  ['tarif-rawat-inap', 'Tarif kamar rawat inap'], ['paket-operasi', 'Paket tindakan operasi'],
-  ['klinik-vaksinasi', 'Klinik vaksinasi'], ['vaksin-umroh-haji', 'Vaksin umroh & haji'], ['vaksin-hpv', 'Vaksin HPV'],
-  ['homecare', 'Homecare'], ['antar-jemput', 'Antar jemput pasien'],
-];
+  [21, 'Jadwal praktek dokter'],
+  [1, 'Antar jemput pasien'], [2, 'Homecare'], [3, 'Klinik vaksinasi'], [4, 'Vaksin umroh & haji'], [5, 'Ambulans 24 jam'],
+  [6, 'Cek kehamilan'], [7, 'Paket operasi SC'], [8, 'Paket kuretase'], [9, 'Paket persalinan normal'], [10, 'Poliklinik Kandungan'],
+  [11, 'Poliklinik THT'], [12, 'Operasi amandel'], [13, 'Endoskopi THT'], [14, 'Operasi katarak Phaco'], [15, 'Poliklinik Mata'],
+  [16, 'Jadwal Poliklinik Kandungan'], [17, 'MCU Sehat Pasti'], [18, 'MCU Sehat Mulia'], [19, 'MCU Sehat Optimal'], [20, 'MCU Sehat Paripurna'],
+].map(([no, judul]) => ({ src: `assets/leaflet/${no}.webp`, judul })); // versi WebP terkompresi dari leaflet/<nomor>.jpeg
 const stage = document.getElementById('brosur-stage'), n = leaflet.length;
-stage.innerHTML = leaflet.map(([f, t], i) =>
-  `<button class="brosur-item" data-i="${i}" tabindex="-1" aria-label="${t}"><img src="assets/leaflet/${f}.jpg" alt="${t}" ${i > 2 && i < n - 2 ? 'loading="lazy"' : ''}></button>`).join('');
+// Gambar belum diberi src: diisi bertahap oleh antrean di bawah, jadi halaman tampil dulu tanpa menunggu semua gambar
+stage.innerHTML = leaflet.map(({ judul }, i) =>
+  `<button class="brosur-item" data-i="${i}" tabindex="-1" aria-label="${judul}"><img alt="${judul}" decoding="async"></button>`).join('');
 const items = [...stage.children];
 let aktif = 0;
+
+// Muat gambar per kelompok 4: kelompok berikutnya baru diminta setelah kelompok sebelumnya selesai (berhasil/gagal)
+const UKURAN_KELOMPOK = 4;
+const janji = new Map();
+function muat(i) {
+  if (janji.has(i)) return janji.get(i);
+  const el = items[i], img = el.querySelector('img');
+  const p = new Promise(selesai => {
+    img.onload = () => { el.classList.add('dimuat'); selesai(); };
+    img.onerror = () => { el.classList.add('gagal'); selesai(); };
+  });
+  img.src = leaflet[i].src;
+  janji.set(i, p);
+  return p;
+}
+async function muatBertahap() {
+  // urutan: kartu depan, lalu ke kanan; kartu kiri (terakhir) ikut kelompok pertama karena langsung terlihat
+  const urutan = [0, 1, n - 1, ...Array.from({ length: n - 3 }, (_, k) => k + 2)];
+  for (let k = 0; k < urutan.length; k += UKURAN_KELOMPOK) {
+    await Promise.all(urutan.slice(k, k + UKURAN_KELOMPOK).map(muat));
+    await new Promise(r => window.requestIdleCallback ? requestIdleCallback(r, { timeout: 300 }) : setTimeout(r, 50)); // jeda singkat agar halaman tetap responsif
+  }
+}
 
 // Jarak melingkar tiap kartu ke kartu aktif: 0 = depan, ±1 = samping, ±2 = siap masuk (tersembunyi)
 function render() {
@@ -745,12 +895,15 @@ function render() {
     let d = (i - aktif + n) % n;
     if (d > n / 2) d -= n;
     el.dataset.pos = Math.abs(d) <= 2 ? d : 'x';
-    if (Math.abs(d) <= 2) el.querySelector('img').loading = 'eager';
+    if (Math.abs(d) <= 1) muat(i); // kartu yang terlihat selalu didahulukan
   });
 }
 const keItem = i => { aktif = (i + n) % n; render(); };
 const geser = arah => keItem(aktif + arah);
 render();
+// Mulai setelah halaman selesai dimuat agar gambar brosur tidak menghambat tampilan pertama
+if (document.readyState === 'complete') muatBertahap();
+else addEventListener('load', muatBertahap, { once: true });
 
 document.getElementById('brosur-prev').onclick = () => { geser(-1); mulaiAuto(); };
 document.getElementById('brosur-next').onclick = () => { geser(1); mulaiAuto(); };
@@ -787,7 +940,7 @@ function mulaiAuto() {
 
 const lb = document.getElementById('lightbox'), lbImg = lb.querySelector('img');
 let idx = 0;
-const tampil = i => { idx = (i + n) % n; lbImg.src = `assets/leaflet/${leaflet[idx][0]}.jpg`; lbImg.alt = leaflet[idx][1]; };
+const tampil = i => { idx = (i + n) % n; lbImg.src = leaflet[idx].src; lbImg.alt = leaflet[idx].judul; };
 function bukaLightbox(i) { tampil(i); lb.showModal(); }
 lb.addEventListener('close', () => keItem(idx));
 mulaiAuto();
