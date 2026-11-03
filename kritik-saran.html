@@ -52,7 +52,7 @@ a{color:inherit}
 main{max-width:1040px;margin:0 auto;padding:24px 20px 48px}
 
 /* bilah atas */
-.atas{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.atas{display:flex;justify-content:flex-end;align-items:center;margin-bottom:20px}
 .kembali{display:inline-flex;align-items:center;gap:6px;font-size:.9rem;font-weight:600;color:var(--teks-2);text-decoration:none;padding:8px 12px 8px 8px;border-radius:99px}
 .kembali:hover{background:var(--ungu-muda);color:var(--ungu-teks)}
 .kembali svg{width:18px;height:18px}
@@ -90,13 +90,15 @@ textarea{min-height:150px;resize:vertical;line-height:1.6}
 textarea::placeholder,input::placeholder{color:var(--teks-2);opacity:.75}
 textarea:focus,input[type="text"]:focus,.captcha input:focus{border-color:var(--ungu);box-shadow:0 0 0 4px var(--ungu-muda)}
 input[aria-invalid="true"]{border-color:var(--merah-teks)}
-.hitung{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:2px;font-size:.78rem;color:var(--teks-2)}
+.hitung{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 10px;margin-top:2px;font-size:.78rem;color:var(--teks-2)}
 .galat{font-size:.86rem;color:var(--merah-teks);margin:2px 0 0}
 
 /* lampiran: tombol kecil di bawah kolom pesan */
-.unggah{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1.5px dashed var(--garis);border-radius:999px;cursor:pointer;font-size:.85rem;font-weight:700;color:var(--ungu-teks);background:var(--bg);transition:border-color .15s,background .15s}
+.unggah{white-space:nowrap;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1.5px dashed var(--garis);border-radius:999px;cursor:pointer;font-size:.85rem;font-weight:700;color:var(--ungu-teks);background:var(--bg);transition:border-color .15s,background .15s}
 .unggah:hover,.unggah.seret{border-color:var(--ungu);background:var(--ungu-muda)}
-.unggah svg{width:18px;height:18px}
+.unggah svg{width:18px;height:18px;flex:none}
+#pesan-hitung{white-space:nowrap;margin-left:auto}
+@media (max-width:420px){.unggah .opsi{display:none}}
 .unggah .opsi{font-weight:500;color:var(--teks-2)}
 .pratinjau{display:flex;align-items:center;gap:12px;padding:8px;border:1px solid var(--garis);border-radius:16px;background:var(--bg)}
 .pratinjau img{width:48px;height:48px;object-fit:cover;border-radius:10px;flex:none;background:var(--garis)}
@@ -118,7 +120,7 @@ input[aria-invalid="true"]{border-color:var(--merah-teks)}
 .ulang:disabled{opacity:.5;cursor:wait}
 .ulang svg{width:22px;height:22px}
 .captcha input{flex:1;min-width:0;text-transform:none}
-@media (max-width:420px){.captcha{flex-wrap:wrap}.captcha input{flex-basis:100%}}
+@media (max-width:420px){.captcha{flex-wrap:wrap}.captcha .gambar{flex:1;width:auto}.captcha input{flex-basis:100%}}
 .status{font-size:.9rem;padding:12px 14px;border-radius:14px}
 .status.gagal{background:var(--merah-bg);border:1px solid var(--merah-garis);color:var(--merah-teks)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:16px;padding:15px 24px;font:inherit;font-weight:800;font-size:1rem;color:#fff;cursor:pointer;
