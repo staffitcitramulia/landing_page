@@ -233,10 +233,8 @@ footer a{color:var(--ungu-teks);font-weight:700;text-decoration:none}
 </main>
 
 <script>
-// ===== Pengaturan =====
-// GET /captcha, POST /feedback. Saat dibuka dari localhost, pakai API Laravel lokal (php artisan serve, port 8000).
-const LOKAL = ['localhost', '127.0.0.1'].includes(location.hostname);
-const API = LOKAL ? 'http://localhost:8000/api' : 'https://api.cimuldev.site/api';
+
+const API ='https://api.cimuldev.site/api';
 const MAKS_GAMBAR = 1024 * 1024;               // 1 MB
 const TIPE_GAMBAR = ['image/jpeg', 'image/png', 'image/webp'];
 const PESAN_MIN = 5, PESAN_MAKS = 5000; // sama dengan validasi FeedbackController
