@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script>try{const t=localStorage.getItem('tema');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<title>Kritik &amp; Saran — Klinik Utama Citra Mulia</title>
+<meta name="description" content="Sampaikan kritik dan saran Anda untuk Klinik Utama Citra Mulia Blora. Tanpa login, cukup 2 menit.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.cimuldev.site">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ungu:#a316b8; --ungu-muda:#f6e6fa; --pink:#e83fbf;
+  --teks:#2a2140; --teks-2:#5d5672; --garis:#e7e1ef; --bg:#fdfbff; --kartu:#fff;
+  --ungu-teks:#a316b8; --merek:#d31f3a; --hero-a:#f3d4fb; --hero-b:#dfe9ff;
+  --merah-bg:#fff5f5; --merah-garis:#f7c9cd; --merah-teks:#b3202c;
+  --hijau-bg:#e7f7ec; --hijau-teks:#1c8b3e;
+  --bayang:0 10px 30px -12px rgba(122,15,140,.25);
+  color-scheme:light;
+}
+/* Mode gelap: sama seperti index.html — ikut sistem, kecuali pengguna memilih lewat tombol */
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ungu-muda:#33203f; --pink:#f06cc9;
+  --teks:#ece6f3; --teks-2:#b4aac3; --garis:#342a47; --bg:#110c19; --kartu:#1b1426;
+  --ungu-teks:#e08cf0; --merek:#ff6b7f; --hero-a:#2e1541; --hero-b:#152038;
+  --merah-bg:#2a1418; --merah-garis:#5c2530; --merah-teks:#ff8f9a;
+  --hijau-bg:#123222; --hijau-teks:#6fdc98;
+  --bayang:0 10px 30px -12px rgba(0,0,0,.7);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --ungu-muda:#33203f; --pink:#f06cc9;
+  --teks:#ece6f3; --teks-2:#b4aac3; --garis:#342a47; --bg:#110c19; --kartu:#1b1426;
+  --ungu-teks:#e08cf0; --merek:#ff6b7f; --hero-a:#2e1541; --hero-b:#152038;
+  --merah-bg:#2a1418; --merah-garis:#5c2530; --merah-teks:#ff8f9a;
+  --hijau-bg:#123222; --hijau-teks:#6fdc98;
+  --bayang:0 10px 30px -12px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+body{margin:0;min-height:100vh;font-family:"Plus Jakarta Sans",system-ui,sans-serif;color:var(--teks);line-height:1.6;-webkit-font-smoothing:antialiased;
+  background:radial-gradient(700px 420px at 85% -5%, var(--hero-a) 0%, transparent 65%),radial-gradient(600px 420px at 0% 35%, var(--hero-b) 0%, transparent 65%),var(--bg);background-attachment:fixed}
+a{color:inherit}
+main{max-width:1040px;margin:0 auto;padding:24px 20px 48px}
+
+/* bilah atas */
+.atas{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.kembali{display:inline-flex;align-items:center;gap:6px;font-size:.9rem;font-weight:600;color:var(--teks-2);text-decoration:none;padding:8px 12px 8px 8px;border-radius:99px}
+.kembali:hover{background:var(--ungu-muda);color:var(--ungu-teks)}
+.kembali svg{width:18px;height:18px}
+.tema{width:42px;height:42px;border-radius:50%;border:1px solid var(--garis);background:var(--kartu);color:var(--teks);cursor:pointer;display:grid;place-items:center}
+.tema:hover{border-color:var(--ungu);color:var(--ungu-teks)}
+.tema svg{width:20px;height:20px}
+.tema .bulan{display:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tema .bulan{display:block}:root:not([data-theme="light"]) .tema .matahari{display:none}}
+:root[data-theme="dark"] .tema .bulan{display:block}:root[data-theme="dark"] .tema .matahari{display:none}
+
+/* satu kartu di tengah */
+main{max-width:560px}
+.panel{background:var(--kartu);border:1px solid var(--garis);border-radius:28px;padding:30px;box-shadow:var(--bayang)}
+@media (max-width:480px){.panel{padding:22px 18px;border-radius:22px}}
+/* kop klinik */
+.kop{padding-bottom:14px;border-bottom:4px solid var(--ungu)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;width:max-content;max-width:100%}
+.brand img{height:58px;width:auto;flex:none}
+.brand small{display:block;font-size:.82rem;letter-spacing:.12em;font-weight:600;color:var(--teks)}
+.brand b{display:block;font-size:2rem;color:var(--merek);font-weight:800;line-height:1;letter-spacing:-.01em}
+.kop .alamat{margin:10px 0 0;font-size:.8rem;font-weight:700;color:var(--teks)}
+@media (max-width:420px){.brand img{height:48px}.brand b{font-size:1.65rem}.kop .alamat{font-size:.74rem}}
+.kepala{margin-bottom:48px}
+.kepala h1{margin:20px 0 0;font-size:1.45rem;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.kepala > p{margin:4px 0 0;font-size:.88rem;color:var(--teks-2)}
+.isian{display:flex;flex-direction:column;gap:26px}
+@media (max-width:480px){.isian{gap:22px}}
+.kolom{display:flex;flex-direction:column;gap:10px}
+.label{font-size:.9rem;font-weight:700}
+.wajib{color:var(--merah-teks)}
+
+/* isian teks */
+textarea,input[type="text"],.captcha input{display:block;width:100%;font:inherit;font-size:1rem;color:var(--teks);background:var(--bg);border:1.5px solid var(--garis);border-radius:16px;padding:14px 16px;outline:0;transition:border-color .15s,box-shadow .15s}
+textarea{min-height:150px;resize:vertical;line-height:1.6}
+textarea::placeholder,input::placeholder{color:var(--teks-2);opacity:.75}
+textarea:focus,input[type="text"]:focus,.captcha input:focus{border-color:var(--ungu);box-shadow:0 0 0 4px var(--ungu-muda)}
+input[aria-invalid="true"]{border-color:var(--merah-teks)}
+.hitung{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:2px;font-size:.78rem;color:var(--teks-2)}
+.galat{font-size:.86rem;color:var(--merah-teks);margin:2px 0 0}
+
+/* lampiran: tombol kecil di bawah kolom pesan */
+.unggah{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1.5px dashed var(--garis);border-radius:999px;cursor:pointer;font-size:.85rem;font-weight:700;color:var(--ungu-teks);background:var(--bg);transition:border-color .15s,background .15s}
+.unggah:hover,.unggah.seret{border-color:var(--ungu);background:var(--ungu-muda)}
+.unggah svg{width:18px;height:18px}
+.unggah .opsi{font-weight:500;color:var(--teks-2)}
+.pratinjau{display:flex;align-items:center;gap:12px;padding:8px;border:1px solid var(--garis);border-radius:16px;background:var(--bg)}
+.pratinjau img{width:48px;height:48px;object-fit:cover;border-radius:10px;flex:none;background:var(--garis)}
+.pratinjau .info{flex:1;min-width:0;font-size:.86rem}
+.pratinjau .info b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pratinjau .info span{color:var(--teks-2)}
+.tautan{border:0;background:none;padding:6px 8px;font:inherit;font-size:.85rem;font-weight:700;color:var(--ungu-teks);cursor:pointer;border-radius:8px;white-space:nowrap}
+.tautan:hover{background:var(--ungu-muda)}
+
+/* kirim */
+.aksi{display:flex;flex-direction:column;align-items:stretch;gap:12px;margin-top:30px}
+/* captcha gambar dari server */
+.captcha{display:flex;gap:12px;align-items:stretch}
+.captcha .gambar{position:relative;flex:none;width:150px;height:54px;border-radius:14px;overflow:hidden;background:#fff;border:1.5px solid var(--garis);display:grid;place-items:center}
+.captcha .gambar img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.captcha .gambar .titik{position:absolute;width:18px;height:18px;border:2.5px solid var(--garis);border-top-color:var(--ungu);border-radius:50%;animation:putar .8s linear infinite}
+.ulang{width:54px;flex:none;display:grid;place-items:center;border:1.5px solid var(--garis);border-radius:16px;background:var(--bg);color:var(--ungu-teks);cursor:pointer}
+.ulang:hover{border-color:var(--ungu);background:var(--ungu-muda)}
+.ulang:disabled{opacity:.5;cursor:wait}
+.ulang svg{width:22px;height:22px}
+.captcha input{flex:1;min-width:0;text-transform:none}
+@media (max-width:420px){.captcha{flex-wrap:wrap}.captcha input{flex-basis:100%}}
+.status{font-size:.9rem;padding:12px 14px;border-radius:14px}
+.status.gagal{background:var(--merah-bg);border:1px solid var(--merah-garis);color:var(--merah-teks)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:16px;padding:15px 24px;font:inherit;font-weight:800;font-size:1rem;color:#fff;cursor:pointer;
+  background:linear-gradient(135deg,#a316b8,#e83fbf);box-shadow:0 12px 24px -12px rgba(163,22,184,.7);transition:transform .15s,filter .15s}
+.btn:hover:not(:disabled){transform:translateY(-1px);filter:brightness(1.06)}
+.btn:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+.btn .putar{width:18px;height:18px;border:2.5px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:putar .8s linear infinite}
+@keyframes putar{to{transform:rotate(360deg)}}
+.kosongkan{align-self:center;border:0;background:none;font:inherit;font-size:.85rem;font-weight:600;color:var(--teks-2);cursor:pointer;padding:6px 10px;border-radius:8px}
+.kosongkan:hover{color:var(--ungu-teks);background:var(--ungu-muda)}
+
+/* terkirim */
+.selesai{text-align:center;padding:30px 8px}
+.selesai .centang{width:76px;height:76px;border-radius:50%;margin:0 auto 18px;display:grid;place-items:center;background:var(--hijau-bg);color:var(--hijau-teks);box-shadow:0 0 0 10px color-mix(in srgb,var(--hijau-bg) 50%,transparent)}
+.selesai .centang svg{width:38px;height:38px}
+.selesai h2{margin:0 0 8px;font-size:1.6rem;font-weight:800;letter-spacing:-.02em}
+.selesai p{margin:0 auto 22px;color:var(--teks-2);max-width:380px}
+
+footer{text-align:center;font-size:.82rem;color:var(--teks-2);margin-top:28px}
+footer a{color:var(--ungu-teks);font-weight:700;text-decoration:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.honeypot{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+@media (prefers-reduced-motion:reduce){.btn,textarea,input{transition:none}.btn .putar,.captcha .titik{animation-duration:2s}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-matahari" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"/></symbol>
+  <symbol id="i-bulan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/></symbol>
+  <!-- Heroicons v2 outline -->
+  <symbol id="i-kiri" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></symbol>
+  <symbol id="i-foto" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"/></symbol>
+  <symbol id="i-ulang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"/></symbol>
+  <symbol id="i-centang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.75 6 6 9-13.5"/></symbol>
+</svg>
+
+<main>
+  <div class="atas">
+    <button class="tema" id="tema" aria-label="Ganti mode terang/gelap"><svg class="matahari"><use href="#i-matahari"/></svg><svg class="bulan"><use href="#i-bulan"/></svg></button>
+  </div>
+
+  <div class="panel">
+    <form id="formulir" novalidate>
+      <div class="kepala">
+        <div class="kop">
+          <a class="brand" href="index.html" aria-label="Klinik Utama Citra Mulia">
+            <img src="assets/logo.png" alt="" width="68" height="58">
+            <span><small>KLINIK UTAMA</small><b>Citra Mulia</b></span>
+          </a>
+          <p class="alamat">Jl. Gatot Subroto Km. 4 Maguan, Tunjungan, Blora, Jawa Tengah</p>
+        </div>
+        <h1>Kritik &amp; Saran</h1>
+        <p>Bantu kami melayani Anda lebih baik.</p>
+      </div>
+
+      <div class="isian">
+        <div class="kolom">
+          <label for="nama" class="label">Nama lengkap <span class="wajib" aria-hidden="true">*</span></label>
+          <input type="text" id="nama" name="name" required aria-required="true" minlength="2" maxlength="100" autocomplete="name" autocapitalize="words" placeholder="Nama Anda" aria-describedby="nama-galat">
+          <p class="galat" id="nama-galat" hidden></p>
+        </div>
+
+        <div class="kolom">
+          <label for="pesan" class="label">Pesan Anda <span class="wajib" aria-hidden="true">*</span></label>
+          <textarea id="pesan" name="message" required aria-required="true" minlength="5" maxlength="5000" placeholder="Ceritakan pengalaman Anda atau apa yang perlu kami perbaiki…" aria-describedby="pesan-hitung pesan-galat"></textarea>
+          <div class="hitung">
+            <label class="unggah" id="area-unggah" title="Lampirkan foto (maks 1 MB)">
+              <svg aria-hidden="true"><use href="#i-foto"/></svg>Lampirkan foto <span class="opsi">(opsional)</span>
+              <input type="file" id="gambar" accept="image/jpeg,image/png,image/webp" hidden>
+            </label>
+            <span id="pesan-hitung"><span id="jumlah">0</span> / 5000</span>
+          </div>
+          <p class="galat" id="pesan-galat" hidden></p>
+        </div>
+        <div class="pratinjau" id="pratinjau" hidden>
+          <img id="pratinjau-img" alt="Pratinjau lampiran">
+          <div class="info"><b id="pratinjau-nama"></b><span id="pratinjau-ukuran"></span></div>
+          <button type="button" class="tautan" id="hapus-gambar">Hapus</button>
+        </div>
+        <p class="galat" id="gambar-galat" role="alert" hidden></p>
+
+        <div class="kolom">
+        <label for="captcha-jawab" class="label">Kode keamanan <span class="wajib" aria-hidden="true">*</span></label>
+        <div class="captcha">
+          <div class="gambar"><img id="captcha-img" alt="Kode captcha" hidden><span class="titik" id="captcha-muat" aria-hidden="true"></span></div>
+          <button type="button" class="ulang" id="captcha-ulang" aria-label="Ganti gambar captcha" title="Ganti gambar"><svg aria-hidden="true"><use href="#i-ulang"/></svg></button>
+          <input id="captcha-jawab" name="captcha_answer" required autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Ketik kode di gambar" aria-describedby="captcha-galat">
+          <input type="hidden" id="captcha-token" name="captcha_token">
+        </div>
+        <p class="galat" id="captcha-galat" hidden></p>
+        </div>
+      </div>
+
+      <!-- jebakan bot: tidak terlihat oleh manusia -->
+      <div class="honeypot" aria-hidden="true"><label>Website <input type="text" name="website" id="website" tabindex="-1" autocomplete="off"></label></div>
+
+      <div class="aksi">
+        <div class="status gagal" id="status" role="alert" hidden></div>
+        <button type="submit" class="btn" id="kirim" disabled>Kirim</button>
+      </div>
+    </form>
+
+    <section class="selesai" id="selesai" hidden tabindex="-1">
+      <div class="centang"><svg><use href="#i-centang"/></svg></div>
+      <h2>Terima kasih!</h2>
+      <p id="selesai-teks">Masukan Anda sudah kami terima.</p>
+    </section>
+  </div>
+
+  <footer>Klinik Utama Citra Mulia · #SemogaSehatSelalu</footer>
+</main>
+
+<script>
+// ===== Pengaturan =====
+// GET /captcha, POST /feedback. Saat dibuka dari localhost, pakai API Laravel lokal (php artisan serve, port 8000).
+const LOKAL = ['localhost', '127.0.0.1'].includes(location.hostname);
+const API = LOKAL ? 'http://localhost:8000/api' : 'https://api.cimuldev.site/api';
+const MAKS_GAMBAR = 1024 * 1024;               // 1 MB
+const TIPE_GAMBAR = ['image/jpeg', 'image/png', 'image/webp'];
+const PESAN_MIN = 5, PESAN_MAKS = 5000; // sama dengan validasi FeedbackController
+const NAMA_MIN = 2, NAMA_MAKS = 100; // sama dengan validasi FeedbackController
+
+const $ = id => document.getElementById(id);
+
+// ===== Tema terang/gelap (kunci 'tema' sama dengan halaman lain) =====
+const root = document.documentElement, sistemGelap = matchMedia('(prefers-color-scheme: dark)');
+const temaAktif = () => root.dataset.theme || (sistemGelap.matches ? 'dark' : 'light');
+const labelTema = () => $('tema').setAttribute('aria-label', temaAktif() === 'dark' ? 'Ganti ke mode terang' : 'Ganti ke mode gelap');
+$('tema').addEventListener('click', () => {
+  const baru = temaAktif() === 'dark' ? 'light' : 'dark';
+  root.dataset.theme = baru;
+  try { localStorage.setItem('tema', baru); } catch (e) {}
+  labelTema();
+});
+sistemGelap.addEventListener('change', labelTema);
+labelTema();
+
+// ===== Captcha dari server: { image, token } =====
+// Harus diganti setiap kali kirim (berhasil maupun gagal), karena token hanya berlaku sekali.
+function galatCaptcha(teks) { $('captcha-galat').textContent = teks; $('captcha-galat').hidden = !teks; }
+let urutanCaptcha = 0; // hanya hasil permintaan terbaru yang dipakai (cegah gambar & token tidak cocok)
+async function muatCaptcha() {
+  const ke = ++urutanCaptcha;
+  $('captcha-ulang').disabled = true;
+  $('captcha-img').hidden = true; $('captcha-muat').hidden = false;
+  $('captcha-token').value = ''; $('captcha-jawab').value = '';
+  galatCaptcha('');
+  try {
+    const res = await fetch(`${API}/captcha`, { headers: { Accept: 'application/json' }, cache: 'no-store' });
+    if (!res.ok) throw new Error(res.status);
+    const r = await res.json();
+    if (ke !== urutanCaptcha) return;           // sudah ada permintaan yang lebih baru
+    if (!r.image || !r.token) throw new Error('format');
+    $('captcha-img').src = r.image;
+    $('captcha-token').value = r.token;
+    $('captcha-img').hidden = false;
+  } catch (e) {
+    if (ke === urutanCaptcha) galatCaptcha('Captcha gagal dimuat. Tekan ↻ untuk mencoba lagi.');
+  } finally {
+    if (ke !== urutanCaptcha) return;
+    $('captcha-muat').hidden = true;
+    $('captcha-ulang').disabled = false;
+    perbaruiTombol();
+  }
+}
+$('captcha-ulang').addEventListener('click', () => { muatCaptcha(); $('captcha-jawab').focus(); });
+$('captcha-jawab').addEventListener('input', () => { $('captcha-jawab').removeAttribute('aria-invalid'); galatCaptcha(''); perbaruiTombol(); });
+
+// ===== Isian =====
+let sedangKirim = false, gambar = null;
+function pesanValid() { const n = $('pesan').value.trim().length; return n >= PESAN_MIN && n <= PESAN_MAKS; }
+function namaValid() { const n = $('nama').value.trim().length; return n >= NAMA_MIN && n <= NAMA_MAKS; }
+function perbaruiTombol() {
+  $('kirim').disabled = sedangKirim || !pesanValid() || !namaValid() || !$('captcha-jawab').value.trim() || !$('captcha-token').value;
+}
+
+$('pesan').addEventListener('input', () => { $('jumlah').textContent = $('pesan').value.length; $('pesan-galat').hidden = true; perbaruiTombol(); });
+$('nama').addEventListener('input', () => { $('nama').removeAttribute('aria-invalid'); $('nama-galat').hidden = true; perbaruiTombol(); });
+$('nama').addEventListener('blur', () => {
+  const salah = !!$('nama').value.trim() && !namaValid();
+  $('nama').toggleAttribute('aria-invalid', salah);
+  $('nama-galat').textContent = `Nama minimal ${NAMA_MIN} karakter.`;
+  $('nama-galat').hidden = !salah;
+});
+
+// ===== Lampiran gambar =====
+let urlPratinjau = null;
+const formatUkuran = b => b < 1024 * 1024 ? `${Math.max(1, Math.round(b / 1024))} KB` : `${(b / 1048576).toFixed(2)} MB`;
+function galatGambar(teks) { $('gambar-galat').textContent = teks; $('gambar-galat').hidden = !teks; }
+
+function pilihGambar(file) {
+  galatGambar('');
+  if (!file) return;
+  if (!TIPE_GAMBAR.includes(file.type)) { galatGambar('Format tidak didukung. Gunakan JPG, PNG, atau WebP.'); return; }
+  if (file.size > MAKS_GAMBAR) { galatGambar(`Ukuran foto ${formatUkuran(file.size)}, melebihi batas 1 MB.`); return; }
+  gambar = file;
+  if (urlPratinjau) URL.revokeObjectURL(urlPratinjau);
+  urlPratinjau = URL.createObjectURL(file);
+  $('pratinjau-img').src = urlPratinjau;
+  $('pratinjau-nama').textContent = file.name;
+  $('pratinjau-ukuran').textContent = formatUkuran(file.size);
+  $('pratinjau').hidden = false;
+}
+function hapusGambar() {
+  gambar = null; $('gambar').value = '';
+  if (urlPratinjau) { URL.revokeObjectURL(urlPratinjau); urlPratinjau = null; }
+  $('pratinjau').hidden = true; galatGambar('');
+}
+$('gambar').addEventListener('change', e => pilihGambar(e.target.files[0]));
+$('hapus-gambar').addEventListener('click', hapusGambar);
+const area = $('area-unggah');
+['dragenter', 'dragover'].forEach(ev => area.addEventListener(ev, e => { e.preventDefault(); area.classList.add('seret'); }));
+['dragleave', 'drop'].forEach(ev => area.addEventListener(ev, e => { e.preventDefault(); area.classList.remove('seret'); }));
+area.addEventListener('drop', e => pilihGambar(e.dataTransfer.files[0]));
+
+// ===== Kirim ke POST /feedback =====
+function statusGagal(teks) { $('status').textContent = teks; $('status').hidden = !teks; }
+function tombolMemuat(ya) {
+  sedangKirim = ya;
+  $('kirim').innerHTML = ya ? '<span class="putar" aria-hidden="true"></span>Mengirim…' : 'Kirim';
+  perbaruiTombol();
+}
+// Galat validasi Laravel per field → tampilkan di dekat kolomnya
+const KOLOM_GALAT = { message: 'pesan-galat', name: 'nama-galat', image: 'gambar-galat', captcha_answer: 'captcha-galat', captcha_token: 'captcha-galat' };
+
+$('formulir').addEventListener('submit', async e => {
+  e.preventDefault();
+  statusGagal('');
+  if (!namaValid()) { $('nama-galat').textContent = 'Nama wajib diisi, minimal 2 karakter.'; $('nama-galat').hidden = false; $('nama').setAttribute('aria-invalid', 'true'); $('nama').focus(); return; }
+  if (!pesanValid()) { $('pesan-galat').textContent = `Minimal ${PESAN_MIN} karakter.`; $('pesan-galat').hidden = false; $('pesan').focus(); return; }
+
+  const data = new FormData();
+  data.append('name', $('nama').value.trim());
+  data.append('message', $('pesan').value.trim());
+  if (gambar) data.append('image', gambar);
+  data.append('website', $('website').value);            // jebakan bot, harus kosong
+  data.append('captcha_answer', $('captcha-jawab').value.trim());
+  data.append('captcha_token', $('captcha-token').value);
+
+  tombolMemuat(true);
+  let berhasil = false;
+  const batas = new AbortController(), waktu = setTimeout(() => batas.abort(), 30000);
+  try {
+    const res = await fetch(`${API}/feedback`, { method: 'POST', headers: { Accept: 'application/json' }, body: data, signal: batas.signal });
+    let json = {}; try { json = await res.json(); } catch (e) {}
+    if (res.ok) { berhasil = true; selesai(json.message); return; }
+    const errors = json.errors || {};
+    let ditaruh = false;
+    for (const [kolom, pesan] of Object.entries(errors)) {
+      const id = KOLOM_GALAT[kolom];
+      if (id) { $(id).textContent = [].concat(pesan).join(' '); $(id).hidden = false; ditaruh = true; }
+    }
+    if (errors.captcha_answer || errors.captcha_token) $('captcha-jawab').setAttribute('aria-invalid', 'true');
+    if (!ditaruh) statusGagal(json.message || (res.status === 429 ? 'Terlalu sering mengirim. Coba lagi nanti.' : `Terjadi kesalahan di server (${res.status}). Coba lagi nanti.`));
+  } catch (err) {
+    statusGagal(err.name === 'AbortError' ? 'Server terlalu lama merespons. Coba lagi.' : 'Tidak dapat terhubung ke server. Periksa koneksi internet.');
+  } finally {
+    clearTimeout(waktu);
+    tombolMemuat(false);
+    if (!berhasil) {
+      const galatCaptchaTampil = !$('captcha-galat').hidden ? $('captcha-galat').textContent : '';
+      await muatCaptcha();                         // captcha harus diganti setiap kali kirim
+      if (galatCaptchaTampil) galatCaptcha(galatCaptchaTampil);
+    }
+  }
+});
+
+function kosongkan() {
+  $('pesan').value = ''; $('jumlah').textContent = '0';
+  $('nama').value = '';
+  hapusGambar(); statusGagal('');
+}
+
+function selesai(pesanServer) {
+  kosongkan();
+  $('selesai-teks').textContent = pesanServer || 'Masukan Anda sudah kami terima.';
+  $('formulir').hidden = true;
+  $('selesai').hidden = false; $('selesai').focus();
+}
+
+muatCaptcha();
+</script>
+</body>
+</html>
